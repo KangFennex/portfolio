@@ -21,7 +21,7 @@ const SoundControl = () => {
     return () => {
       audio.pause();
     };
-  }, [soundIsOn]);
+  }, [soundIsOn, audio]);
 
   const handleSoundIsOn = () => {
     setSoundIsOn(!soundIsOn);

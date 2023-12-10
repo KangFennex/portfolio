@@ -49,7 +49,7 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("resize", handleWindowResize);
     };
-  }, []);
+  }, [isFlipped]);
 
   // Animation to have the menu appear and then slow down as it comes down
   const springFromTop = {

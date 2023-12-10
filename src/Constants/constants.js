@@ -5,7 +5,6 @@ import bootstrap from "../assets/tech/bootstrap.png";
 import css from "../assets/tech/css.png";
 import ejs from "../assets/tech/ejs.png";
 import git from "../assets/tech/git.png";
-import github from "../assets/tech/github.png";
 import html from "../assets/tech/html.png";
 import javascript from "../assets/tech/javascript.png";
 import mongoose from "../assets/tech/mongoose.png";
