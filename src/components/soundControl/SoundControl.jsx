@@ -7,11 +7,11 @@ import { LightModeContext } from "../utils/LightModeContext";
 const SoundControl = () => {
   const [soundIsOn, setSoundIsOn] = useState(false);
   const audioRef = useRef();
-  const audio = new Audio(soundFile);
   const { lightMode } = useContext(LightModeContext);
 
 
   useEffect(() => {
+    const audio = new Audio(soundFile);
     if (soundIsOn) {
       audio.play();
     } else {
@@ -21,7 +21,7 @@ const SoundControl = () => {
     return () => {
       audio.pause();
     };
-  }, [soundIsOn, audio]);
+  }, [soundIsOn]);
 
   const handleSoundIsOn = () => {
     setSoundIsOn(!soundIsOn);
