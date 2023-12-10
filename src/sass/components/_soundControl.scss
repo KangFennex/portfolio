@@ -1,0 +1,28 @@
+.sound-icon {
+  display: flex;
+  margin: auto;
+  opacity: 0.86;
+  cursor: pointer;
+  z-index: 1;
+  margin-top: 0.5rem;
+
+  &.dark-mode {
+    color: var(--orange);
+  }
+
+  &.light-mode {
+    color: var(--light-grayish-blue);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sound-icon {
+    position: fixed;
+    bottom: 3.5rem;
+    right: 2rem;
+
+    &.light-mode {
+      color: var(--orange);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.sound-icon {
+  color: #fff;
+  position: fixed;
+  bottom: 7rem;
+  right: 2.5rem;
+  opacity: 0.86;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.is-on {
+  color: var(--orange);
+}

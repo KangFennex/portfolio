@@ -1,0 +1,136 @@
+.skills {
+  width: 100vw;
+  padding-top: 5rem;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+
+    &__frame {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 80%;
+      min-height: 35rem;
+      margin-top: 3rem;
+    }
+
+    &__buttons-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 1rem;
+
+      &__skills-button {
+        border: none;
+        cursor: pointer;
+        background: hsl(0, 0%, 100%, 0.3);
+        border-radius: 8px;
+        padding: 0.6rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--light-grayish-blue);
+        box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4),
+          0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6),
+            0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    &__skills {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding-top: 3rem;
+
+      &__skills-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__skills-icon {
+        width: 5rem;
+
+        &__label {
+          background-color: var(--dark);
+          color: var(--light-grayish-blue);
+          padding: 0.3rem;
+          border-radius: 5px;
+          width: fit-content;
+          padding: 0.3rem 1rem;
+          opacity: 0;
+          transition: opacity 1s ease-in;
+        }
+
+        &:hover+&__label {
+          opacity: 1;
+        }
+
+        &:hover {
+          animation: rotate 2s linear;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .skills {
+    padding-top: 5rem;
+
+    &__container {
+      &__frame {
+        width: 90%;
+        flex-direction: row;
+      }
+
+      &__buttons-container {
+        flex-direction: column;
+        width: 10%;
+        gap: 5rem;
+      }
+
+      &__skills {
+        margin: auto;
+        width: 80%;
+
+        &__skills-container {
+          flex-direction: column;
+        }
+
+        &__skills-icon {
+          margin: 0 2rem;
+          width: 6rem;
+
+          &__label {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+          }
+        }
+      }
+
+      &__buttons-container__skills-button {
+        font-size: 21px;
+        padding: 18px 34px;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}

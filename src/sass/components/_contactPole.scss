@@ -1,0 +1,94 @@
+.contact-pole {
+  display: flex;
+  transform: translateX(30%) translateY(10%);
+
+  &__container {
+    position: relative;
+  }
+
+  &__img {
+    width: 16rem;
+    bottom: 5rem;
+  }
+
+  &__follow {
+    position: absolute;
+    font-size: 1.2rem;
+    transform: rotateZ(15deg);
+    top: 2rem;
+    left: 50px;
+    font-family: "Yuji Boku", serif;
+    opacity: 0.86;
+    cursor: default;
+  }
+
+  &__github {
+    position: absolute;
+    z-index: 1;
+    top: 8.6rem;
+    left: 9.6rem;
+    cursor: pointer;
+    transform: rotateZ(-15deg);
+    opacity: 0.86;
+
+    &-h2 {
+      position: absolute;
+      z-index: 1;
+      font-size: 1.2rem;
+      top: 8.7rem;
+      left: 4.3rem;
+      font-family: "Yuji Boku", serif;
+      opacity: 0.86;
+      cursor: default;
+    }
+  }
+
+  &__linkedin {
+    position: absolute;
+    z-index: 1;
+    top: 14.2rem;
+    left: 4.4rem;
+    cursor: pointer;
+    transform: rotateZ(15deg);
+    opacity: 0.86;
+
+    &-h2 {
+      position: absolute;
+      z-index: 1;
+      font-size: 1rem;
+      top: 14.8rem;
+      left: 6.1rem;
+      font-family: "Yuji Boku", serif;
+      transform: rotateZ(15deg);
+      cursor: default;
+    }
+  }
+
+  &__instagram {
+    position: absolute;
+    z-index: 1;
+    top: 20.6rem;
+    left: 8.6rem;
+    cursor: pointer;
+    transform: rotateZ(-10deg);
+    opacity: 0.86;
+
+    &-h2 {
+      position: absolute;
+      z-index: 1;
+      font-size: 1.2rem;
+      top: 20.6rem;
+      left: 3.6rem;
+      transform: rotateZ(-10deg);
+      font-family: "Yuji Boku", serif;
+      opacity: 0.86;
+      cursor: default;
+    }
+  }
+}
+
+a {
+  color: black;
+}
+
+@media screen and (min-width: 768px) {}

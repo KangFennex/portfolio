@@ -1,0 +1,32 @@
+
+- create component for bar and add to DEMO + navbar + menu
+- decide color projects description
+- make the description disappear
+- fix the footer in the Bankist web app when you log in
+- also fix the amounts that shows at the bottom now, might be because of the footer change
+- change the tab icons for those you haven't done, like the markdown previewer
+- make the background sound repeat
+- change AWS icon
+- add readme to Marketplace
+- add example listings to marketplace
+- fixe pic Abydos
+- fix google Firebase log in problems with the marketplace
+- add log in options for Bankist App
+- add SBG to skills
+- and D3?
+
+navbar menu {
+    - when you click on the sound, it stops when the menu disappear
+    - 
+}
+
+
+tomo: 
+
+set up contact page
+fix etch + demo space issue
+make top stuff disappear
+set up contact page
+
++ redux
+start grocery shopping

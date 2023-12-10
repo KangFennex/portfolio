@@ -1,0 +1,126 @@
+.navbar {
+  width: 100vw;
+  height: 85px;
+  position: fixed;
+  background-color: transparent;
+  z-index: 2;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    height: 100%;
+
+    &__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 1rem;
+
+      &__img {
+        width: 2rem;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 10rem;
+      height: 20rem;
+      border-radius: 5px;
+      position: absolute;
+      top: 4rem;
+      right: 2.3rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: auto;
+
+      &.dark-mode {
+        background-color: var(--dark);
+      }
+
+      &.light-mode {
+        background-color: var(--sand-orange);
+      }
+
+      &__icon {
+        margin-right: 1.5rem;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+
+        &.dark-mode {
+          color: var(--light-grayish-blue);
+        }
+
+        &.light-mode {
+          color: var(--black);
+        }
+      }
+
+      &__items {
+        margin-left: 1.2rem;
+      }
+
+      &__item {
+        text-decoration: none;
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+        font-family: "Bebas Neue", sans-serif;
+
+        &.dark-mode {
+          color: var(--orange);
+        }
+
+        &.light-mode {
+          font-weight: 600;
+          color: var(--dark-grey);
+        }
+      }
+    }
+  }
+}
+
+.flipped {
+  transform: rotateX(180deg);
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    &__container {
+      &__logo {
+        justify-content: flex-start;
+        margin-left: 2rem;
+      }
+
+      &__menu {
+        &__items {
+          width: 50%;
+          display: flex;
+          justify-content: flex-end;
+          gap: 3rem;
+          margin-right: 3rem;
+        }
+
+        &__item {
+          font-size: 1.8rem;
+
+          &__bar {
+            width: 0;
+            height: 4px;
+            font-size: 3rem;
+            border-radius: 5rem;
+            background-color: var(--orange);
+            transition: width 0.3s ease-in;
+          }
+
+          &:hover+&__bar {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

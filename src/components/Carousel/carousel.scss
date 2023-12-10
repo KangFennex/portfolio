@@ -1,0 +1,28 @@
+.carousel {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15rem;
+    gap: 2rem;
+
+    &__nav-buttons {
+        display: flex;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    &__outer-container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+    
+    &__container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 4rem;
+
+    }
+}

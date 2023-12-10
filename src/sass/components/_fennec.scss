@@ -1,0 +1,25 @@
+.fennec-container {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &__fennec {
+    width: 12rem;
+    z-index: 20;
+    margin-right: 6rem;
+    margin-bottom: 5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .fennec-container {
+    height: 30%;
+
+    &__fennec {
+      width: 14rem;
+      margin-right: 16rem;
+    }
+  }
+}

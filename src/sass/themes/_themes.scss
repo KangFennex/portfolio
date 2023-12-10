@@ -1,0 +1,64 @@
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &__icon {
+    color: var(--orange);
+  }
+
+  &__icon.active {
+    color: var(--light-grayish-blue);
+  }
+
+  &__switch {
+    width: 3.5rem;
+    height: 2rem;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 50px;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6),
+        0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  ;
+
+  &__switch.active {
+    justify-content: flex-end;
+    background-color: rgb(80, 60%, 40%);
+  }
+
+  &__handle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--light-grayish-blue);
+    border-radius: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .theme-toggle {
+    position: fixed;
+    z-index: 1;
+    right: 1rem;
+    bottom: 1rem;
+
+    &__icon {
+      display: none;
+    }
+  }
+}

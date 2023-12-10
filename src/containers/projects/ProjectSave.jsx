@@ -1,0 +1,101 @@
+import "../../sass/pages/_index.scss"
+import SectionTitle from "../../components/sectionTitle/SectionTitle";
+import { projects } from "../../Constants/constants";
+import { useState } from "react";
+import { PiArrowFatLinesLeftBold, PiArrowFatLinesRightBold } from "react-icons/pi";
+import useWindowSize from "../../components/utils/useWindowSize";
+import ProjectCard from "../../components/projectCard/ProjectCard";
+import { motion, AnimatePresence } from "framer-motion"
+
+const Projects = () => {
+  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [expand, setExpand] = useState(false);
+  const [startIndex, setStartIndex] = useState(0);
+  const { width } = useWindowSize();
+  const watchWidth = width > 768 ? true : false
+
+  const projectsPerPage = watchWidth ? 6 : 2;
+
+  const handleExpand = (id) => {
+    const filtered = projects.filter((project) => project.id === id);
+
+    if (filteredProjects !== projects) {
+      setFilteredProjects(projects);
+      setExpand(!expand);
+    } else {
+      setFilteredProjects(filtered);
+      setStartIndex(0);
+      setExpand(!expand);
+    }
+  };
+
+  const handleNext = () => {
+    const newIndex = startIndex + projectsPerPage;
+    if (newIndex < projects.length) {
+      setStartIndex(newIndex);
+    }
+  };
+
+  const handlePrevious = () => {
+    const newIndex = startIndex - projectsPerPage;
+    if (newIndex >= 0) {
+      setStartIndex(newIndex);
+    }
+  };
+
+  return (
+    <div id="projects" className="projects">
+      <SectionTitle title="Stuff I've built" subtitle="Projects" />
+      <div className="projects-nav">
+        <div className="projects-nav__arrows">
+          <div className="projects-nav__arrows-prev">
+            <PiArrowFatLinesLeftBold
+              size={watchWidth ? 50 : 35}
+              onClick={handlePrevious}
+              disabled={startIndex === 0}
+            />
+          </div>
+          <div className="projects-nav__arrows-next">
+            <PiArrowFatLinesRightBold
+              size={watchWidth ? 50 : 35}
+              onClick={handleNext}
+              disabled={startIndex + projectsPerPage >= projects.length}
+            />
+          </div>
+        </div>
+        <div className="projects__container">
+          <AnimatePresence>
+            {filteredProjects
+              .slice(startIndex, startIndex + projectsPerPage)
+              .map((project, i) => {
+                return (
+                  <motion.div
+                    key={i}
+                    layout
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0 }}
+                    transition={{ type: 'spring', damping: 20, stiffness: 60 }}
+                  >
+                    <ProjectCard
+                      expand={expand}
+                      handleExpand={handleExpand}
+                      id={project.id}
+                      title={project.title}
+                      subtitle={project.subtitle}
+                      image={project.image}
+                      summary={project.summary}
+                      features={project.features}
+                      technologies={project.technologies}
+                      link={project.link} />
+                  </motion.div>
+                )
+              })}
+          </AnimatePresence>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;

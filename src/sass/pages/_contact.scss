@@ -1,0 +1,24 @@
+.contact {
+  width: 100vw;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  &__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .contact {
+
+    &__container {
+      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-rows: 1fr;
+      margin-top: 3rem;
+    }
+  }
+}
