@@ -15,6 +15,7 @@ import reactjs from "../assets/tech/reactjs.png";
 import redux from "../assets/tech/redux.png";
 import scss from "../assets/tech/scss.png";
 import tailwind from "../assets/tech/tailwind.png";
+import express from "../assets/tech/express.png";
 
 // projects
 import bankist from "../assets/projectsImg/bankist.png";
@@ -34,15 +35,15 @@ import clock25 from "../assets/projectsImg/clock25.png";
 
 const introduction = {
   text: [
-    "I'm Michel, a self-taught developer based in Manchester, UK. I'm an academically-trained historian, but I now work with a variety of frontend and analytical languages, responsive frameworks, and database management systems.",
+    "I'm Michel, a passionate and driven self-taught developer based in Manchester, UK.",
 
-    "I'm currently building a web platform for event planning, mixing both corporate and private events, with a strong focus on social sharing and a client-side calendar-based planning. I'm most comfortable working with React, and I am getting proficient with C#.",
+    "I'm an academically-trained historian, but I now work with a variety of frontend and analytical languages, responsive frameworks, and database management systems.",
 
-    "When I'm not on my computer or exploring the city, I practice languages (I can speak 5!). I'm also a big history nerd with a particular passion for Asian history. I spent many years in Asia, but I glady now call Manchester home.",
+    "I'm most comfortable working with React, and I am proficient with the MERN stack.",
 
-    "Oh, and we all agree that fennec foxes are the best, right?",
+    "I'm currently building a web platform for event planning, mixing both corporate and private events, with a strong focus on social sharing and a client-side calendar-based planning.",
 
-    "I'm always improving my skills and I'd love to work on new and exciting projects, so get in touch, or best, hire me!",
+    "When I'm not on my computer or exploring the city, I practice languages or read about historical events.",
   ],
 };
 
@@ -97,13 +98,6 @@ const skills = [
     category: "front-end",
   },
   {
-    id: "aws",
-    title: "AWS",
-    icon: aws,
-    label: "AWS",
-    category: "back-end",
-  },
-  {
     id: "mongodb",
     title: "MongoDB",
     icon: mongodb,
@@ -156,8 +150,15 @@ const skills = [
     id: "bootstrap",
     title: "Bootstrap",
     icon: bootstrap,
-    label: "bootstrap",
+    label: "Bootstrap",
     category: "front-end"
+  },
+  {
+    id: "express",
+    title: "Express",
+    icon: express,
+    label: "Express",
+    category: "back-end"
   },
 ];
 
@@ -166,13 +167,12 @@ const projects = [
     id: 13,
     title: "YelpCamp",
     category: "website",
-    technologies: [mongodb, mongoose, ejs, bootstrap],
+    technologies: [mongodb, mongoose, ejs, bootstrap, express],
     image: yelpCamp,
     subtitle: "A Yelp-like website to list campgrounds",
-    summary: "YelpCamp offers a login function powered by MongoDB and Passport and the option for users to create, modify, and delete campgrounds and display them on a map.",
-    features: ["Express middleware", "Express Error Handling", "Joi Validator", "Cookies", "Mapbox implementation", "Database Security"],
+    summary: "YelpCamp is a web app offers a login function powered by MongoDB and Passport and the option for users to create, modify, and delete campgrounds and display them on a map.",
+    features: ["Express Middleware", "Express Error Handling", "Joi Validator", "Cookies", "Mapbox implementation", "Database Security"],
     link: "https://yelpcamp-ye9z.onrender.com",
-
   },
   {
     id: 7,
@@ -278,7 +278,7 @@ const projects = [
     technologies: [reactjs, redux, css],
     image: softway,
     subtitle: "A shopping cart using Redux toolkit",
-    summary: "",
+    summary: "This shopping cart was built in order to practice state management using Redux Toolkit. It includes logics for discounted items and a responsive design.",
     features: [
       "Redux toolkit",
       "Item Discounts",
@@ -342,8 +342,8 @@ const projects = [
     technologies: [javascript, css],
     image: templeSeti,
     subtitle: "My very first website",
-    summary: "bla bla bla",
-    features: ["Responsive Design"],
+    summary: "This is the first website I built as part of Colt Steele's The Web Developer Bootcamp 2023. It focuses on responsiveness and the use of CSS and vanilla Javascript for the image carousel.",
+    features: ["Responsive Design", "Image Carousel"],
     link: "https://temple-of-seti-abydos.netlify.app",
   },
 ];

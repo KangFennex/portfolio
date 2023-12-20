@@ -1,20 +1,86 @@
 .contact {
   width: 100vw;
-  padding-top: 5rem;
+  padding-top: 8rem;
   padding-bottom: 5rem;
 
-  &__container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 65%;
+    height: 5rem;
+    border: none;
+    cursor: pointer;
+    background: hsla(0, 0%, 100%, 0.3);
+    border-radius: 8px;
+    padding: 0.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--light-grayish-blue);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6),
+        0 4px 6px rgba(0, 0, 0, 0.1);
+    }
   }
+
+  &__container {
+    display: grid;
+    width: 100%;
+  }
+
+  &__close {
+    display: flex;
+    cursor: pointer;
+    color: var(--light-grayish-blue);
+    margin-left: auto;
+  }
+
+  &__socials {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    & a {
+      color: var(--light-grayish-blue)
+    }
+  }
+}
+
+
+/* CSS for the modal */
+.modal {
+  background-color: rgba(112, 112, 112, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 
 @media screen and (min-width: 768px) {
   .contact {
-
     &__container {
       grid-template-columns: 1.2fr 0.8fr;
       grid-template-rows: 1fr;

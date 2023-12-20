@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import { Themes } from "../../components/themes/themes";
 import { LightModeContext } from "../../components/utils/LightModeContext";
 import { NavbarMenu } from "./navbarMenu";
-import SoundControl from "../../components/soundControl/SoundControl"
 
 const Navbar = () => {
   const { width } = useWindowSize();
@@ -112,7 +111,6 @@ const Navbar = () => {
           >
             <NavbarMenu />
             <Themes />
-            <SoundControl />
           </motion.div>
         )}
 

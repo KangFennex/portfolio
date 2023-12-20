@@ -1,14 +1,13 @@
 import "../../sass/components/_index.scss"
 import { GiSoundOff, GiSoundOn } from "react-icons/gi";
-import { useState, useRef, useEffect, useContext } from "react";
+import { useRef, useEffect, useContext, useState } from "react";
 import soundFile from "../../assets/sound/desert-monolith-6369.mp3";
 import { LightModeContext } from "../utils/LightModeContext";
 
 const SoundControl = () => {
-  const [soundIsOn, setSoundIsOn] = useState(false);
   const audioRef = useRef();
   const { lightMode } = useContext(LightModeContext);
-
+  const [soundIsOn, setSoundIsOn] = useState(false);
 
   useEffect(() => {
     const audio = new Audio(soundFile);

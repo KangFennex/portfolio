@@ -17,32 +17,25 @@ const Projects = () => {
   const projectsPerPage = largeWidth ? 6 : 2;
 
   const handleExpand = (id) => {
-    const filtered = projects.filter((project) => project.id === id);
-
-    if (filteredProjects !== projects) {
+    if (!expand) {
+      const filtered = projects.filter((project) => project.id === id);
+      setFilteredProjects(filtered);
+      setPageHold(startIndex);
+      setStartIndex(0);
+    } else {
       setFilteredProjects(projects);
       setStartIndex(pageHold);
-      setExpand(!expand);
-    } else {
-      setPageHold(startIndex);
-      setFilteredProjects(filtered);
-      setStartIndex(0);
-      setExpand(!expand);
-    }
+    }   setExpand(!expand);
   };
 
   const handleNext = () => {
-    const newIndex = startIndex + projectsPerPage;
-    if (newIndex < projects.length) {
-      setStartIndex(newIndex);
-    }
+    const newIndex = Math.min(startIndex + projectsPerPage, projects.length - projectsPerPage);
+    setStartIndex(newIndex);
   };
 
   const handlePrevious = () => {
-    const newIndex = startIndex - projectsPerPage;
-    if (newIndex >= 0) {
-      setStartIndex(newIndex);
-    }
+    const newIndex = Math.max(startIndex - projectsPerPage, 0);
+    setStartIndex(newIndex);
   };
 
   return (
