@@ -2,7 +2,7 @@ import Navbar from "./layouts/navbar/navbar";
 import Hero from "./containers/hero/Hero";
 import About from "./containers/about/About";
 import Skills from "./containers/skills/Skills";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { LightModeContext } from "./components/utils/LightModeContext";
 import SoundControl from "./components/soundControl/SoundControl";
 import useWindowSize from "./components/utils/useWindowSize";
