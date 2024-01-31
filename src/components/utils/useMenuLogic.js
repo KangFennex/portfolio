@@ -1,20 +1,20 @@
 import { useState, useEffect, useRef } from "react";
 
 const useMenuLogic = () => {
-  const [isMenuVisible, setMenuVisible] = useState(false);
+  const [isElemVisible, setElemVisible] = useState(false);
   const [isFlipped, setFlipped] = useState(false);
-  const menuRef = useRef();
+  const elementRef = useRef();
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuVisible(false);
+      if (elementRef.current && !elementRef.current.contains(event.target)) {
+        setElemVisible(false);
         setFlipped(!isFlipped);
       }
     }
 
     function handleWindowResize() {
-      setMenuVisible(false);
+      setElemVisible(false);
       setFlipped(!isFlipped);
     }
 
@@ -27,7 +27,7 @@ const useMenuLogic = () => {
     };
   });
 
-  return { isMenuVisible, setMenuVisible, setFlipped, menuRef };
+  return { isElemVisible, setElemVisible, setFlipped, elementRef };
 };
 
 export default useMenuLogic;

@@ -1,11 +1,14 @@
 import "../../sass/pages/_index.scss"
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
 import { skills } from "../../Constants/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import useWindowSize from "../../components/utils/useWindowSize";
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion";
+import Button from "../../components/button/Button";
+import { LightModeContext } from "../../components/utils/LightModeContext";
 
 const Skills = () => {
+  const { lightMode } = useContext(LightModeContext);
   const [filteredSkills, setFilteredSkills] = useState(skills);
   const { width } = useWindowSize();
 
@@ -40,7 +43,7 @@ const Skills = () => {
                       alt={`${skill.title} icon`}
                       className="skills__container__skills__skills-icon"
                     ></img>
-                    <span className="skills__container__skills__skills-icon__label">
+                    <span className={`skills__container__skills__skills-icon__label ${lightMode ? "light-mode" : "dark-mode"}`}>
                       {skill.label}
                     </span>
                   </motion.div>
@@ -49,24 +52,18 @@ const Skills = () => {
             </AnimatePresence>
           </div>
           <div className="skills__container__buttons-container">
-            <button
-              className="skills__container__buttons-container__skills-button bounce"
-              onClick={() => filterSkills("all")}
-            >
-              All
-            </button>
-            <button
-              className="skills__container__buttons-container__skills-button bounce"
-              onClick={() => filterSkills("front-end")}
-            >
-              {width < 768 ? "Frontend" : "Front\nEnd"}
-            </button>
-            <button
-              className="skills__container__buttons-container__skills-button bounce"
-              onClick={() => filterSkills("back-end")}
-            >
-              {width < 768 ? "Backend" : "Back\nEnd"}
-            </button>
+            <Button 
+            text="All"
+            onClick={() => filterSkills("all")}
+            />
+            <Button 
+            text={width < 768 ? "Frontend" : "Front\nEnd"}
+            onClick={() => filterSkills("front-end")}
+            />
+            <Button 
+            text={width < 768 ? "Backend" : "Back\nEnd"}
+            onClick={() => filterSkills("back-end")}
+            />
           </div>
         </div>
       </div>

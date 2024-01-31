@@ -37,7 +37,8 @@
       }
 
       &.light-mode {
-        color: #191923;
+        color: var(--dark);
+        background-color: var(--sand-light-orange);
       }
     }
 

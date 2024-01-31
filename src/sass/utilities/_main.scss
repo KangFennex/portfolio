@@ -9,6 +9,7 @@
   --red: #e76f51;
   --orange: rgb(240, 176, 55);
   --sand-orange: #f6bd60;
+  --sand-light-orange: #f7e2c270;
   /*review green - won't apply */
   --green: rgb(80, 60%, 40%);
   --light-green: rgb(80, 60%, 40%, 0.67);
@@ -25,14 +26,14 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
   background-image: url("../../assets/background/desert-gb-freepikj.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  opacity: 0.86;
+  //opacity: 0.86;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
 }
@@ -50,6 +51,7 @@ body {
 }
 
 .bounce {
+  display: inline-flex;
   transition: all 0.3s ease-out;
 }
 

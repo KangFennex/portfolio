@@ -16,7 +16,7 @@ const HeroText = () => {
         transition={{ duration: 2 }}
         className={`hero-text__h1 ${lightMode ? "light-mode" : "dark-mode"}`}
       >
-        <span className="hero-text__top">Who's</span>
+        <span className="hero-text__top bounce">Who's</span>
         <div>
           {name.split("").map((char, index) => {
             if (char === " ") {

@@ -39,11 +39,11 @@ const introduction = {
 
     "I'm an academically-trained historian, but I now work with a variety of frontend and analytical languages, responsive frameworks, and database management systems.",
 
-    "I'm most comfortable working with React, and I am proficient with the MERN stack.",
+    "I'm most comfortable working with React and the MERN stack.",
 
     "I'm currently building a web platform for event planning, mixing both corporate and private events, with a strong focus on social sharing and a client-side calendar-based planning.",
 
-    "When I'm not on my computer or exploring the city, I practice languages or read about historical events.",
+    "When I'm not on my computer or exploring the city, I practice languages or read history.",
   ],
 };
 
@@ -267,7 +267,7 @@ const projects = [
     image: newsHomepage,
     subtitle: "Tech news website's homepage",
     summary:
-      "A sample for a tech news website's homepage built as part of the challenges offered by Frontend Mentor.",
+      "A sample for a tech news website's homepage built as part of the challenges offered by Frontend Mentor. I used this project as an opportunity to practice CSS Grid.",
     features: ["CSS Grid", "Mobile-first Webflow", "Responsive Design"],
     link: "https://news-homepage-frontend-mentor1.netlify.app",
   },
@@ -330,7 +330,7 @@ const projects = [
     image: quoteMachine,
     subtitle: "Quote Generator",
     summary:
-      "This project was built as part of the FreeCodeCamp's Front End Development Libraries certification process. It makes use of an API and was built without instructions.",
+      "This project was built as part of the FreeCodeCamp's Front End Development Libraries certification process. Built without instructions, it makes use of an API and CSS animations to achieve the animated coloured border.",
     features: ["API"],
     link: "https://random-quote-machine-fcc-kangkm.netlify.app",
   },
@@ -342,8 +342,8 @@ const projects = [
     technologies: [javascript, css],
     image: templeSeti,
     subtitle: "My very first website",
-    summary: "This is the first website I built as part of Colt Steele's The Web Developer Bootcamp 2023. It focuses on responsiveness and the use of CSS and vanilla Javascript for the image carousel.",
-    features: ["Responsive Design", "Image Carousel"],
+    summary: "This is the first website I built as part of Colt Steele's The Web Developer Bootcamp 2023. I used the project as an opportunity to look back at my trip to Egypt. An emphasis was put on responsiveness and I used vanilla Javascript for the image carousel.",
+    features: ["Responsive Design", "Bootstrap", "Image Carousel"],
     link: "https://temple-of-seti-abydos.netlify.app",
   },
 ];

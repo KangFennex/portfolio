@@ -11,11 +11,9 @@ const About = () => {
 
   const variants = {
     offscreen: {
-      scale: 0.95,
       opacity: 0.8,
     },
     onscreen: {
-      scale: 1,
       opacity: 1,
       transition: {
         type: "spring",

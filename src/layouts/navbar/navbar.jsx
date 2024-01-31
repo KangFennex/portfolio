@@ -4,10 +4,12 @@ import { useState, useEffect, useRef, useContext } from "react";
 import useWindowSize from "../../components/utils/useWindowSize";
 import logo from "../../assets/logo/Renard-logo.png";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { motion } from "framer-motion";
+import { IoCloseSharp } from "react-icons/io5";
+import { AnimatePresence, motion } from "framer-motion";
 import { Themes } from "../../components/themes/themes";
 import { LightModeContext } from "../../components/utils/LightModeContext";
 import { NavbarMenu } from "./navbarMenu";
+
 
 const Navbar = () => {
   const { width } = useWindowSize();
@@ -20,6 +22,10 @@ const Navbar = () => {
   };
   const menuRef = useRef();
 
+  const closeMenu = () => {
+    setMenuVisible(false)
+  }
+
   useEffect(() => {
     function handleClickOutside(event) {
       // Check if the click target contains the icon element
@@ -30,14 +36,14 @@ const Navbar = () => {
 
       // Make the menu disappear if you click outside of it
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuVisible(false);
+        closeMenu();
         setFlipped(!isFlipped);
       }
     }
 
     // Make the menu disappear if you resize the screen
     function handleWindowResize() {
-      setMenuVisible(false);
+      closeMenu();
       setFlipped(!isFlipped);
     }
 
@@ -51,12 +57,21 @@ const Navbar = () => {
   }, [isFlipped]);
 
   // Animation to have the menu appear and then slow down as it comes down
-  const springFromTop = {
+  const springFromRight = {
     hidden: {
-      y: -10,
+      x: 300,
     },
     visible: {
-      y: 0,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 50,
+        mass: 0.4,
+        damping: 8,
+      },
+    },
+    exit: {
+      x: 300,
       transition: {
         type: "spring",
         stiffness: 50,
@@ -80,9 +95,8 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Renard Logo"
-              className={`navbar__container__logo__img ${
-                lightMode ? "light-mode" : "dark-mode"
-              }`}
+              className={`navbar__container__logo__img ${lightMode ? "light-mode" : "dark-mode"
+                }`}
             />
           </div>
         </Link>
@@ -91,29 +105,31 @@ const Navbar = () => {
             <HiMenuAlt3
               size={45}
               style={{ opacity: "86%" }}
-              className={`navbar__container__menu__icon ${
-                isFlipped ? "flipped" : ""
-              } ${lightMode ? "light-mode" : "dark-mode"}`}
+              className={`navbar__container__menu__icon ${isFlipped ? "flipped" : ""
+                } ${lightMode ? "light-mode" : "dark-mode"}`}
               onClick={handleClick}
             />
           </div>
         )}
-
+<AnimatePresence>
         {isMenuVisible && (
           <motion.div
-            className={`navbar__container__menu ${
-              lightMode ? "light-mode" : "dark-mode"
-            }`}
+            className={`navbar__container__menu ${lightMode ? "light-mode" : "dark-mode"
+              }`}
             ref={menuRef}
-            variants={springFromTop}
+            variants={springFromRight}
             initial="hidden"
             animate="visible"
+            exit="exit"
           >
+            <div className="navbar__container__menu__close">
+            <IoCloseSharp size={40} onClick={() => closeMenu()} />
+            </div>
             <NavbarMenu />
             <Themes />
           </motion.div>
         )}
-
+</AnimatePresence>
         {width > 768 && (
           <>
             <NavbarMenu />

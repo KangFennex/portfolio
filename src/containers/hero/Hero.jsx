@@ -1,5 +1,5 @@
 import "../../sass/pages/_index.scss"
-import Fennec from "../../components/fennec/Fennec";
+// import Fennec from "../../components/fennec/Fennec";
 import HeroText from "../../components/heroText/HeroText"
 
 
@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="hero__container__intro">
           <HeroText />
         </div>
-        <Fennec />
+        {/* <Fennec /> */}
       </div>
     </nav>
   );

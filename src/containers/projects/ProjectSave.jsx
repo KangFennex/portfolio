@@ -12,87 +12,77 @@ const Projects = () => {
   const [expand, setExpand] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
   const { width } = useWindowSize();
-  const watchWidth = width > 768 ? true : false
-
-  const projectsPerPage = watchWidth ? 6 : 2;
+  const [pageHold, setPageHold] = useState(0);
+  const largeWidth = width > 768 ? true : false;
+  const projectsPerPage = largeWidth ? 6 : 2;
 
   const handleExpand = (id) => {
-    const filtered = projects.filter((project) => project.id === id);
-
-    if (filteredProjects !== projects) {
-      setFilteredProjects(projects);
-      setExpand(!expand);
-    } else {
+    if (!expand) {
+      const filtered = projects.filter((project) => project.id === id);
       setFilteredProjects(filtered);
+      setPageHold(startIndex);
       setStartIndex(0);
-      setExpand(!expand);
-    }
+    } else {
+      setFilteredProjects(projects);
+      setStartIndex(pageHold);
+    }   setExpand(!expand);
   };
 
   const handleNext = () => {
-    const newIndex = startIndex + projectsPerPage;
-    if (newIndex < projects.length) {
-      setStartIndex(newIndex);
-    }
+    const newIndex = Math.min(startIndex + projectsPerPage, projects.length - projectsPerPage);
+    setStartIndex(newIndex);
   };
 
   const handlePrevious = () => {
-    const newIndex = startIndex - projectsPerPage;
-    if (newIndex >= 0) {
-      setStartIndex(newIndex);
-    }
+    const newIndex = Math.max(startIndex - projectsPerPage, 0);
+    setStartIndex(newIndex);
   };
 
   return (
     <div id="projects" className="projects">
       <SectionTitle title="Stuff I've built" subtitle="Projects" />
-      <div className="projects-nav">
-        <div className="projects-nav__arrows">
-          <div className="projects-nav__arrows-prev">
+      <div className="projects__container">
+        {!expand && (
+          <div
+            className="projects__container__arrows-prev">
             <PiArrowFatLinesLeftBold
-              size={watchWidth ? 50 : 35}
+              size={largeWidth ? 50 : 35}
               onClick={handlePrevious}
               disabled={startIndex === 0}
             />
           </div>
-          <div className="projects-nav__arrows-next">
+        )}
+        <AnimatePresence>
+          {filteredProjects
+            .slice(startIndex, startIndex + projectsPerPage)
+            .map((project, i) => {
+              return (
+                <motion.div key={i}>
+                  <ProjectCard
+                    expand={expand}
+                    handleExpand={handleExpand}
+                    id={project.id}
+                    title={project.title}
+                    subtitle={project.subtitle}
+                    image={project.image}
+                    summary={project.summary}
+                    features={project.features}
+                    technologies={project.technologies}
+                    link={project.link} />
+                </motion.div>
+              )
+            })}
+        </AnimatePresence>
+        {!expand && (
+          <div
+            className="projects__container__arrows-next">
             <PiArrowFatLinesRightBold
-              size={watchWidth ? 50 : 35}
+              size={largeWidth ? 50 : 35}
               onClick={handleNext}
               disabled={startIndex + projectsPerPage >= projects.length}
             />
           </div>
-        </div>
-        <div className="projects__container">
-          <AnimatePresence>
-            {filteredProjects
-              .slice(startIndex, startIndex + projectsPerPage)
-              .map((project, i) => {
-                return (
-                  <motion.div
-                    key={i}
-                    layout
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    exit={{ scale: 0 }}
-                    transition={{ type: 'spring', damping: 20, stiffness: 60 }}
-                  >
-                    <ProjectCard
-                      expand={expand}
-                      handleExpand={handleExpand}
-                      id={project.id}
-                      title={project.title}
-                      subtitle={project.subtitle}
-                      image={project.image}
-                      summary={project.summary}
-                      features={project.features}
-                      technologies={project.technologies}
-                      link={project.link} />
-                  </motion.div>
-                )
-              })}
-          </AnimatePresence>
-        </div>
+        )}
       </div>
     </div>
   );

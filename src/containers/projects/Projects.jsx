@@ -1,32 +1,26 @@
 import "../../sass/pages/_index.scss"
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
 import { projects } from "../../Constants/constants";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { PiArrowFatLinesLeftBold, PiArrowFatLinesRightBold } from "react-icons/pi";
 import useWindowSize from "../../components/utils/useWindowSize";
+import { BiExpand } from "react-icons/bi";
 import ProjectCard from "../../components/projectCard/ProjectCard";
-import { motion, AnimatePresence } from "framer-motion"
 
 const Projects = () => {
-  const [filteredProjects, setFilteredProjects] = useState(projects);
   const [expand, setExpand] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
   const { width } = useWindowSize();
-  const [pageHold, setPageHold] = useState(0);
   const largeWidth = width > 768 ? true : false;
   const projectsPerPage = largeWidth ? 6 : 2;
+  const [selectedProject, setSelectedProject] = useState(null);
+  const modalRef = useRef();
 
   const handleExpand = (id) => {
-    if (!expand) {
-      const filtered = projects.filter((project) => project.id === id);
-      setFilteredProjects(filtered);
-      setPageHold(startIndex);
-      setStartIndex(0);
-    } else {
-      setFilteredProjects(projects);
-      setStartIndex(pageHold);
-    }   setExpand(!expand);
-  };
+    const project = projects.find((project) => project.id === id);
+    setExpand(!expand)
+    setSelectedProject(project)
+  }
 
   const handleNext = () => {
     const newIndex = Math.min(startIndex + projectsPerPage, projects.length - projectsPerPage);
@@ -38,13 +32,34 @@ const Projects = () => {
     setStartIndex(newIndex);
   };
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+
+      // Make the menu disappear if you click outside of it
+      if (modalRef.current && !modalRef.current.contains(event.target) && expand) {
+        setExpand(!expand);
+      }
+    }
+
+    function handleMouseDown(event) {
+      handleClickOutside(event);
+    }
+
+      document.addEventListener("mousedown", handleMouseDown);
+
+      return () => {
+        document.removeEventListener("mousedown", handleMouseDown);
+      }
+    
+  }, [modalRef, expand, setExpand]);
+
   return (
     <div id="projects" className="projects">
       <SectionTitle title="Stuff I've built" subtitle="Projects" />
-      <div className="projects__container">
+      <div className="projects-container">
         {!expand && (
           <div
-            className="projects__container__arrows-prev">
+            className="projects-container__arrows-prev">
             <PiArrowFatLinesLeftBold
               size={largeWidth ? 50 : 35}
               onClick={handlePrevious}
@@ -52,37 +67,61 @@ const Projects = () => {
             />
           </div>
         )}
-        <AnimatePresence>
-          {filteredProjects
-            .slice(startIndex, startIndex + projectsPerPage)
-            .map((project, i) => {
-              return (
-                <motion.div
-                  key={i}
-                  layout
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  exit={{ scale: 0 }}
-                  transition={{ type: 'spring', damping: 10, stiffness: 100, duration: 0.3 }}
-                >
-                  <ProjectCard
-                    expand={expand}
-                    handleExpand={handleExpand}
-                    id={project.id}
-                    title={project.title}
-                    subtitle={project.subtitle}
-                    image={project.image}
-                    summary={project.summary}
-                    features={project.features}
-                    technologies={project.technologies}
-                    link={project.link} />
-                </motion.div>
-              )
-            })}
-        </AnimatePresence>
+        <div className="projects-container__container"> 
+            {!expand &&
+              projects
+                .slice(startIndex, startIndex + projectsPerPage)
+                .map((project, i) => (
+                  <div
+                    className="projects-container__mini-card"
+                    key={i}
+                  >
+                    <BiExpand
+                      size={35}
+                      className="projects-container__mini-card__icon"
+                      onClick={() => handleExpand(project.id)}
+                    />
+                    <img
+                    src={project.image}
+                    className="projects-container__mini-card__img"
+                    alt="Project"
+                    />
+                    <div className="projects-container__mini-card__description">
+                      <div className="projects-container__mini-card__title">
+                        <h2>{project.title}</h2>
+                        <h3>{project.subtitle}</h3>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+          
+        </div>
+
+        {expand && selectedProject && (
+          <div className="projects-container__overlay">
+            <div
+            className="projects-container__modal"
+            ref={modalRef}
+            >
+              <ProjectCard
+                expand={expand}
+                handleExpand={handleExpand}
+                id={selectedProject.id}
+                title={selectedProject.title}
+                subtitle={selectedProject.subtitle}
+                image={selectedProject.image}
+                summary={selectedProject.summary}
+                features={selectedProject.features}
+                technologies={selectedProject.technologies}
+                link={selectedProject.link}
+              />
+            </div>
+          </div>
+        )}
+
         {!expand && (
           <div
-            className="projects__container__arrows-next">
+            className="projects-container__arrows-next">
             <PiArrowFatLinesRightBold
               size={largeWidth ? 50 : 35}
               onClick={handleNext}

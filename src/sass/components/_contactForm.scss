@@ -58,6 +58,8 @@
   }
 
   &__submit {
+    display: flex;
+    justify-content: center;
     border: none;
     cursor: pointer;
     width: 20rem;
