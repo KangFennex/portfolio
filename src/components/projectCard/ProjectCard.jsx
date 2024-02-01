@@ -1,11 +1,12 @@
 import "../../sass/components/_index.scss"
 import { BiExpand } from "react-icons/bi";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ProjectCard = ({ handleExpand, id, title, subtitle, image, summary, features, technologies, link }) => {
 
     return (
         <>
+        <AnimatePresence>
             <motion.div
                 key={id}
                 initial={{ scale: 0.6 }}
@@ -72,6 +73,7 @@ const ProjectCard = ({ handleExpand, id, title, subtitle, image, summary, featur
 
                 </div>
             </motion.div>
+            </AnimatePresence>
         </>
     )
 }

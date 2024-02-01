@@ -19,7 +19,14 @@ const Projects = () => {
 
   const handleExpand = (id) => {
     const project = projects.find((project) => project.id === id);
-    setExpand(!expand)
+    if (expand) {
+      setTimeout(() => {
+        setExpand(!expand)
+      }, 300)
+    } else {
+      setExpand(!expand)
+    }
+    
     setSelectedProject(project)
   }
 
