@@ -15,6 +15,7 @@ const Projects = () => {
   const projectsPerPage = largeWidth ? 6 : 2;
   const [selectedProject, setSelectedProject] = useState(null);
   const modalRef = useRef();
+  const [flipCards, setFlipCards] = useState(false);
 
   const handleExpand = (id) => {
     const project = projects.find((project) => project.id === id);
@@ -24,13 +25,31 @@ const Projects = () => {
 
   const handleNext = () => {
     const newIndex = Math.min(startIndex + projectsPerPage, projects.length - projectsPerPage);
-    setStartIndex(newIndex);
+    if (newIndex !== startIndex) {
+      setFlipCards(true);
+      setTimeout(() => {
+        setStartIndex(newIndex);
+      }, 600);
+    }
   };
-
+  
   const handlePrevious = () => {
     const newIndex = Math.max(startIndex - projectsPerPage, 0);
-    setStartIndex(newIndex);
+    if (newIndex !== startIndex) {
+      setFlipCards(true);
+      setTimeout(() => {
+        setStartIndex(newIndex);
+      }, 600);
+    }
   };
+
+  useEffect(() => {
+    if (flipCards) {
+      setTimeout(() => {
+        setFlipCards(false);
+      }, 400);
+    }
+  }, [flipCards]);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -73,7 +92,7 @@ const Projects = () => {
                 .slice(startIndex, startIndex + projectsPerPage)
                 .map((project, i) => (
                   <div
-                    className="projects-container__mini-card"
+                  className={`projects-container__mini-card ${flipCards ? 'flipped' : ''}`}
                     key={i}
                   >
                     <BiExpand
