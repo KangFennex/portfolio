@@ -32,6 +32,7 @@ import softway from "../assets/projectsImg/softway.png";
 import templeSeti from "../assets/projectsImg/temple-of-seti.png";
 import yelpCamp from "../assets/projectsImg/yelpCamp.png";
 import clock25 from "../assets/projectsImg/clock25.png";
+import space from "../assets/projectsImg/space-tourism.png";
 
 const introduction = {
   text: [
@@ -175,6 +176,17 @@ const projects = [
     link: "https://yelpcamp-ye9z.onrender.com",
   },
   {
+    id: 14,
+    title: "Space Tourism Website",
+    technologies: [reactjs, scss],
+    image: space,
+    subtitle: "Space Tourism's website presenting the destinations, crew, and techs",
+    summary: "Space Tourism is a inter-planetary shuttle service. The website includes three different types of smooth transitions.",
+    features: ["Framer-Motion", "Responsive Design"],
+    link: "https://space-tourism-website-fm2.netlify.app/crew",
+
+  },
+  {
     id: 7,
     title: "Personal Portfolio",
     category: "website",
@@ -183,7 +195,7 @@ const projects = [
     subtitle: "A portfolio build around the theme of the desert",
     summary: "I built my portfolio to showcase what I have learned so far. TBC",
     features: ["Parallax Effect", "Framer-Motion", "Responsive Design"],
-    link: "https://www.google.com",
+    link: "https://kangkm.netlify.app",
   },
   {
     id: 12,

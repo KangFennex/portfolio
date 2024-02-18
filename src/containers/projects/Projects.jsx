@@ -63,7 +63,13 @@ const Projects = () => {
 
       // Make the menu disappear if you click outside of it
       if (modalRef.current && !modalRef.current.contains(event.target) && expand) {
-        setExpand(!expand);
+        if (expand) {
+          setTimeout(() => {
+            setExpand(!expand)
+          }, 300)
+        } else {
+          setExpand(!expand)
+        }
       }
     }
 

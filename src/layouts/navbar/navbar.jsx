@@ -56,7 +56,7 @@ const Navbar = () => {
     };
   }, [isFlipped]);
 
-  // Animation to have the menu appear and then slow down as it comes down
+  // Animation to have the menu appear and then slow down
   const springFromRight = {
     hidden: {
       x: 300,
