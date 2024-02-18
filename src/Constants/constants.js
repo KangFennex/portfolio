@@ -180,10 +180,10 @@ const projects = [
     title: "Space Tourism Website",
     technologies: [reactjs, scss],
     image: space,
-    subtitle: "Space Tourism's website presenting the destinations, crew, and techs",
+    subtitle: "Space Tourism showcases it's destinations, crew, and techs",
     summary: "Space Tourism is a inter-planetary shuttle service. The website includes three different types of smooth transitions.",
     features: ["Framer-Motion", "Responsive Design"],
-    link: "https://space-tourism-website-fm2.netlify.app/crew",
+    link: "https://space-tourism-website-fm2.netlify.app",
 
   },
   {
