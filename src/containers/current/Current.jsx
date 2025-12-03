@@ -1,6 +1,6 @@
 import "../../sass/pages/_index.scss"
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Button from "../../components/button/Button";
 import { LightModeContext } from "../../components/utils/LightModeContext";
 import { currentProjects, skills } from "../../constants/constants";
@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const Current = () => {
     const { lightMode } = useContext(LightModeContext);
-    const [currentItems, setCurrentItems] = useState(currentProjects);
 
     return (
         <nav id="current" className="current">
@@ -19,7 +18,7 @@ const Current = () => {
                     <h4 className="current__container__header__tech">TECH</h4>
                     <h4>DESCRIPTION</h4>
                 </div>
-                {currentItems.map((item) => (
+                {currentProjects.map((item) => (
                     <div key={item.id} className="current__container__item">
                         <h3 className={`current__container__item__title ${lightMode ? "light-mode" : "dark-mode"}`}>{item.title}</h3>
                         <div className="current__container__item__tech">
