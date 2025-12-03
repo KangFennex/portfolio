@@ -5,17 +5,20 @@ import bootstrap from "../assets/tech/bootstrap.png";
 import css from "../assets/tech/css.png";
 import ejs from "../assets/tech/ejs.png";
 import git from "../assets/tech/git.png";
-import html from "../assets/tech/html.png";
 import javascript from "../assets/tech/javascript.png";
 import mongoose from "../assets/tech/mongoose.png";
 import mongodb from "../assets/tech/mongodb.png";
 import node from "../assets/tech/node.png";
-import photoshop from "../assets/tech/photoshop.png";
 import reactjs from "../assets/tech/reactjs.png";
 import redux from "../assets/tech/redux.png";
 import scss from "../assets/tech/scss.png";
 import tailwind from "../assets/tech/tailwind.png";
 import express from "../assets/tech/express.png";
+import nextjs from "../assets/tech/nextjs.png";
+import supabase from "../assets/tech/supabase.png";
+import trpc from "../assets/tech/trpc.png";
+import drizzle from "../assets/tech/drizzle.png";
+import zustand from "../assets/tech/zustand.png";
 
 // projects
 import bankist from "../assets/projectsImg/bankist.png";
@@ -49,25 +52,81 @@ const introduction = {
 };
 
 const skills = [
-  {
-    id: "html",
-    title: "HTML",
-    icon: html,
-    label: "HTML",
+    {
+    id: "react",
+    title: "React",
+    icon: reactjs,
+    label: "React JS",
     category: "front-end",
   },
   {
-    id: "css",
-    title: "CSS",
-    icon: css,
-    label: "CSS",
-    category: "front-end",
+    id: "Next JS",
+    title: "Next JS",
+    icon: nextjs,
+    label: "Next JS",
+    category: "back-end",
+  },
+  {
+    id: "trpc",
+    title: "tRPC",
+    icon: trpc,
+    label: "tRPC",
+    category: "back-end",
+  },
+  {
+    id: "supabase",
+    title: "Supabase",
+    icon: supabase,
+    label: "Supabase",
+    category: "back-end",
+  },
+  {
+    id: "drizzle",
+    title: "Drizzle ORM",
+    icon: drizzle,
+    label: "Drizzle ORM",
+    category: "back-end",
   },
   {
     id: "javascript",
     title: "JavaScript",
     icon: javascript,
     label: "Javascript",
+    category: "front-end",
+  },
+    {
+    id: "redux",
+    title: "REDUX",
+    icon: redux,
+    label: "Redux",
+    category: "front-end",
+  },
+  {
+    id: "zustand",
+    title: "Zustand",
+    icon: zustand,
+    label: "Zustand",
+    category: "front-end",
+  },
+    {
+    id: "mongoose",
+    title: "Mongoose",
+    icon: mongoose,
+    label: "Mongoose",
+    category: "back-end",
+  },
+  {
+    id: "express",
+    title: "Express",
+    icon: express,
+    label: "Express",
+    category: "back-end"
+  },
+    {
+    id: "css",
+    title: "CSS",
+    icon: css,
+    label: "CSS",
     category: "front-end",
   },
   {
@@ -78,11 +137,18 @@ const skills = [
     category: "front-end",
   },
   {
-    id: "react",
-    title: "React",
-    icon: reactjs,
-    label: "React JS",
+    id: "tailwind",
+    title: "Tailwind",
+    icon: tailwind,
+    label: "Tailwind",
     category: "front-end",
+  },
+  {
+    id: "bootstrap",
+    title: "Bootstrap",
+    icon: bootstrap,
+    label: "Bootstrap",
+    category: "front-end"
   },
   {
     id: "git",
@@ -92,25 +158,11 @@ const skills = [
     category: "back-end",
   },
   {
-    id: "redux",
-    title: "REDUX",
-    icon: redux,
-    label: "Redux",
-    category: "front-end",
-  },
-  {
     id: "mongodb",
     title: "MongoDB",
     icon: mongodb,
     label: "Mongo DB",
     category: "back-end",
-  },
-  {
-    id: "photoshop",
-    title: "Photoshop",
-    icon: photoshop,
-    label: "Photoshop",
-    category: "front-end",
   },
   {
     id: "api",
@@ -126,61 +178,30 @@ const skills = [
     label: "Node.js",
     category: "back-end",
   },
+];
+
+const currentProjects = [
   {
-    id: "mongoose",
-    title: "Mongoose",
-    icon: mongoose,
-    label: "Mongoose",
-    category: "back-end",
+    id: 1,
+    title: "Backrolls",
+    tech: [reactjs, nextjs, supabase, zustand, drizzle, trpc ],
+    description: "An interactive website for quotes from famous TV Shows.",
   },
   {
-    id: "tailwind",
-    title: "Tailwind",
-    icon: tailwind,
-    label: "Tailwind",
-    category: "front-end",
-  },
-  {
-    id: "ejs",
-    title: "EJS",
-    icon: ejs,
-    label: "EJS",
-    category: "front-end"
-  },
-  {
-    id: "bootstrap",
-    title: "Bootstrap",
-    icon: bootstrap,
-    label: "Bootstrap",
-    category: "front-end"
-  },
-  {
-    id: "express",
-    title: "Express",
-    icon: express,
-    label: "Express",
-    category: "back-end"
+    id: 2,
+    title: "Immersive Portfolio",
+    tech: [reactjs, mongodb, zustand, tailwind],
+    description: "A windows-inspired portfolio showcasing my projects.",
   },
 ];
 
 const projects = [
   {
-    id: 13,
-    title: "YelpCamp",
-    category: "website",
-    technologies: [mongodb, mongoose, ejs, bootstrap, express],
-    image: yelpCamp,
-    subtitle: "A Yelp-like website to list campgrounds",
-    summary: "YelpCamp is a web app offers a login function powered by MongoDB and Passport and the option for users to create, modify, and delete campgrounds and display them on a map.",
-    features: ["Express Middleware", "Express Error Handling", "Joi Validator", "Cookies", "Mapbox implementation", "Database Security"],
-    link: "https://yelpcamp-ye9z.onrender.com",
-  },
-  {
     id: 14,
-    title: "Space Tourism Website",
+    value: "Space Tourism Website",
     technologies: [reactjs, scss],
     image: space,
-    subtitle: "Space Tourism showcases it's destinations, crew, and techs",
+    subtitle: "Space Tourism showcases it's destinations, crew, and tech",
     summary: "Space Tourism is a inter-planetary shuttle service. The website includes three different types of smooth transitions.",
     features: ["Framer-Motion", "Responsive Design"],
     link: "https://space-tourism-website-fm2.netlify.app",
@@ -188,7 +209,7 @@ const projects = [
   },
   {
     id: 7,
-    title: "Personal Portfolio",
+    value: "Personal Portfolio",
     category: "website",
     technologies: [reactjs, scss],
     image: portfolio,
@@ -199,7 +220,7 @@ const projects = [
   },
   {
     id: 12,
-    title: "Sneakers Landing Page",
+    value: "Sneakers Landing Page",
     category: "website",
     technologies: [reactjs, tailwind],
     image: sneakers,
@@ -209,20 +230,8 @@ const projects = [
     link: "https://sneaker-product-landing-page.netlify.app"
   },
   {
-    id: 8,
-    title: "Housing Marketplace",
-    category: "website",
-    technologies: [reactjs, aws],
-    image: housing,
-    subtitle: "Interactive Housing Marketplace Platform",
-    summary:
-      "Developed as part of the React Front to Back 2022 course, this project allows users to explore properties. Users can browse through a  selection of rental and purchase listings with the possibility of creating their personalized access using Firebase authentication. Users can then edit, and manage their own property listings effortlessly, all accessible from their unique user profile.",
-    features: ["AWS user login", "Create/edit listings", "Profile view"],
-    link: "https://bright-mandazi-d30993.netlify.app",
-  },
-  {
     id: 2,
-    title: "Bankist App",
+    value: "Bankist App",
     category: "website",
     technologies: [javascript, css],
     image: bankist2,
@@ -240,7 +249,7 @@ const projects = [
   },
   {
     id: 1,
-    title: "Bankist Website",
+    value: "Bankist Website",
     category: "website",
     technologies: [javascript, css],
     image: bankist,
@@ -259,21 +268,8 @@ const projects = [
       "https://github.com/KangFennex/Bankist-Website---Javascript-Course/tree/main",
   },
   {
-    id: 6,
-    title: "Discount Calculator",
-    category: "tool",
-    technologies: [javascript, css],
-    image: discountsCalc,
-    subtitle:
-      "A tool to calculate discounts based on membership cost and rental turnover",
-    summary:
-      "This project was built for coworkers at the sales' department who needed a simple and swift tool to calculate discounts based on the membership cost, number of rental units and the rental turnover (in French).",
-    features: ["vanilla JS"],
-    link: "https://calculateur-rabais-pex.netlify.app",
-  },
-  {
     id: 10,
-    title: "News Homepage",
+    value: "News Homepage",
     category: "website",
     technologies: [javascript, css],
     image: newsHomepage,
@@ -285,7 +281,7 @@ const projects = [
   },
   {
     id: 11,
-    title: "Softway Grocery",
+    value: "Softway Grocery",
     category: "website",
     technologies: [reactjs, redux, css],
     image: softway,
@@ -301,7 +297,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "Markdown Previewer",
+    value: "Markdown Previewer",
     category: "tool",
     technologies: [reactjs, css],
     image: markdown,
@@ -313,7 +309,7 @@ const projects = [
   },
   {
     id: 5,
-    title: "Drum Machine",
+    value: "Drum Machine",
     category: "tool",
     technologies: [reactjs, css],
     image: drumMachine,
@@ -325,7 +321,7 @@ const projects = [
   },
   {
     id: 14,
-    title: "25 + 5 Clock",
+    value: "25 + 5 Clock",
     category: "tool",
     technologies: [css],
     image: clock25,
@@ -336,7 +332,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Random Quote Machine",
+    value: "Random Quote Machine",
     category: "tool",
     technologies: [reactjs, api, css],
     image: quoteMachine,
@@ -346,10 +342,9 @@ const projects = [
     features: ["API"],
     link: "https://random-quote-machine-fcc-kangkm.netlify.app",
   },
-
   {
     id: 9,
-    title: "The Temple of Seti I",
+    value: "The Temple of Seti I",
     category: "website",
     technologies: [javascript, css],
     image: templeSeti,
@@ -360,4 +355,43 @@ const projects = [
   },
 ];
 
-export { introduction, skills, projects };
+const oldProjects = [
+    {
+    id: 6,
+    value: "Discount Calculator",
+    category: "tool",
+    technologies: [javascript, css],
+    image: discountsCalc,
+    subtitle:
+      "A tool to calculate discounts based on membership cost and rental turnover",
+    summary:
+      "This project was built for coworkers at the sales' department who needed a simple and swift tool to calculate discounts based on the membership cost, number of rental units and the rental turnover (in French).",
+    features: ["vanilla JS"],
+    link: "https://calculateur-rabais-pex.netlify.app",
+  },
+    {
+    id: 8,
+    value: "Housing Marketplace",
+    category: "website",
+    technologies: [reactjs, aws],
+    image: housing,
+    subtitle: "Interactive Housing Marketplace Platform",
+    summary:
+      "Developed as part of the React Front to Back 2022 course, this project allows users to explore properties. Users can browse through a  selection of rental and purchase listings with the possibility of creating their personalized access using Firebase authentication. Users can then edit, and manage their own property listings effortlessly, all accessible from their unique user profile.",
+    features: ["AWS user login", "Create/edit listings", "Profile view"],
+    link: "https://bright-mandazi-d30993.netlify.app",
+  },
+    {
+    id: 13,
+    value: "YelpCamp",
+    category: "website",
+    technologies: [mongodb, mongoose, ejs, bootstrap, express],
+    image: yelpCamp,
+    subtitle: "A Yelp-like website to list campgrounds",
+    summary: "YelpCamp is a web app offers a login function powered by MongoDB and Passport and the option for users to create, modify, and delete campgrounds and display them on a map.",
+    features: ["Express Middleware", "Express Error Handling", "Joi Validator", "Cookies", "Mapbox implementation", "Database Security"],
+    link: "https://yelpcamp-ye9z.onrender.com",
+  },
+];
+
+export { introduction, skills, currentProjects, projects };

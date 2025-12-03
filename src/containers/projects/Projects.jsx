@@ -1,6 +1,6 @@
 import "../../sass/pages/_index.scss"
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
-import { projects } from "../../Constants/constants";
+import { projects } from "../../constants/constants";
 import { useEffect, useState, useRef } from "react";
 import { PiArrowFatLinesLeftBold, PiArrowFatLinesRightBold } from "react-icons/pi";
 import useWindowSize from "../../components/utils/useWindowSize";

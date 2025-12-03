@@ -1,6 +1,6 @@
 .skills {
   width: 100vw;
-  padding-top: 5rem;
+  padding-top: 10rem;
 
   &__container {
     display: flex;
@@ -71,7 +71,7 @@
 
 @media (min-width: 768px) {
   .skills {
-    padding-top: 5rem;
+    padding-top: 15rem;
 
     &__container {
       &__frame {

@@ -2,7 +2,7 @@ import "../../sass/pages/_index.scss"
 import { motion } from "framer-motion";
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
 import avatar from "../../assets/avatar/avatar.png";
-import { introduction } from "../../Constants/constants";
+import { introduction } from "../../constants/constants";
 import { LightModeContext } from "../../components/utils/LightModeContext";
 import { useContext } from "react";
 

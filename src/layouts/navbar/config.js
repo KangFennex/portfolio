@@ -1,18 +1,17 @@
 export const NavbarEls = [
-  {
-    title: "About",
-    link: "#about",
+    {
+    title: "Projects",
+    link: "/projects",
+    isRoute: true,
   },
-  {
+    {
     title: "Skills",
     link: "#skills",
+    isRoute: false,
   },
   {
-    title: "Projects",
-    link: "#projects",
-  },
-  {
-    title: "Contact",
-    link: "#contact",
+    title: "About",
+    link: "/about",
+    isRoute: true,
   },
 ];

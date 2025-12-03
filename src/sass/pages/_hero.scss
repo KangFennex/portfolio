@@ -1,37 +1,81 @@
 .hero {
   overflow-x: hidden;
-    &__container {
-      width: 100vw;
-      height: 100vh;
+
+  &__container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 2rem;
+
+      & h4 {
+        font-size: 2.5rem;
+        font-weight: 400;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+      &.light-mode {
+        color: var(--black);
+      }
+
+      &.dark-mode {
+        color: var(--sand-orange);
+      }
+      }
+
+    &__intro {
+      width: 90%;
       display: flex;
+      align-items: center;
       flex-direction: column;
-      position: relative;
-  
+      text-align: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+      margin-top: -1rem;
+
+      & p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2.5rem;
+      }
+
+      &.light-mode {
+        color: var(--black);
+      }
+
+      &.dark-mode {
+        color: var(--white-aged-parchment);
+      }
+    }
+
+      &__contact {
+        margin-top: 3rem;
+      }
+
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    &__container {
       &__intro {
-        width: 100%;
-        height: 70%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        width: 80%;
+
+      }
     }
   }
-  
-  @media screen and (min-width: 768px) {
-    .hero {
-      &__container {
-        &__intro {
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    &__container {
+      &__intro {
+        & p {
+          max-width: 1000px;
         }
       }
     }
   }
-  
-  @media screen and (min-width: 1024px) {
-    .hero {
-      &__container {
-        &__intro {
-        }
-      }
-    }
-  }
-  
+}

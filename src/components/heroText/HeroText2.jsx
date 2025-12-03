@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { LightModeContext } from "../utils/LightModeContext";
 
 const HeroText = () => {
-  const name = "Kangkm?";
+  const name = "Welcome to my oasis";
 
   const { lightMode } = useContext(LightModeContext);
 
@@ -16,7 +16,6 @@ const HeroText = () => {
         transition={{ duration: 2 }}
         className={`hero-text__h1 ${lightMode ? "light-mode" : "dark-mode"}`}
       >
-        <span className="hero-text__top bounce">Who's</span>
         <div>
           {name.split("").map((char, index) => {
             if (char === " ") {

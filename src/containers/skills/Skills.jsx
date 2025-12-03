@@ -1,6 +1,6 @@
 import "../../sass/pages/_index.scss"
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
-import { skills } from "../../Constants/constants";
+import { skills } from "../../constants/constants";
 import { useState, useContext } from "react";
 import useWindowSize from "../../components/utils/useWindowSize";
 import { motion, AnimatePresence } from "framer-motion";
@@ -22,8 +22,8 @@ const Skills = () => {
   };
 
   return (
-    <nav id="skills" className="skills">
-      <SectionTitle title="The tools I use" subtitle="My skills" />
+    <section id="skills" className="skills">
+      <SectionTitle title="The tools I use" />
       <div className="skills__container">
         <div className="skills__container__frame">
           <div className="skills__container__skills">
@@ -67,7 +67,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </section>
   );
 };
 

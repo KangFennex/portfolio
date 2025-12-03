@@ -7,10 +7,8 @@
   font-family: 'SuperMarioFont', sans-serif;
 
   &__h1 {
-    font-size: 6rem;
-    color: var(--orange);
+    font-size: 3rem;
     cursor: default;
-    margin-top: 4rem;
 
     &.light-mode {
       color: var(--dark);
@@ -26,11 +24,9 @@
 
 @media screen and (min-width: 768px) {
   .hero-text {
-    margin-top: 8rem;
-
     &__h1 {
-      margin: auto;
-      font-size: 12rem;
+      font-size: 5rem;
+      text-wrap: nowrap;
     }
   }
 }
@@ -38,7 +34,6 @@
 @media screen and (min-width: 1624px) {
   .hero-text {
     &__h1 {
-      font-size: 16rem;
     }
   }
 }

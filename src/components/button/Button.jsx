@@ -3,12 +3,12 @@ import { useContext } from "react";
 import { LightModeContext } from "../utils/LightModeContext";
 
 
-const Button = ({ text, onClick }) => {
+const Button = ({ text, minWidth, onClick }) => {
     const { lightMode } = useContext(LightModeContext);
 
     return (
         <div>
-            <button className={`skills-button ${lightMode ? "light-mode" : "dark-mode"} bounce`} onClick={onClick}>
+            <button className={`skills-button ${lightMode ? "light-mode" : "dark-mode"} ${minWidth ? 'min-width' : ''} bounce`} onClick={onClick}>
                 {text}
             </button>
         </div>

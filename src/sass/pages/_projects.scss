@@ -1,11 +1,10 @@
 .projects {
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
   width: 100%;
+  padding-top: 65px;
 
   &-container {
-    padding-top: 3rem;
     min-height: 32rem;
     display: flex;
     justify-content: center;

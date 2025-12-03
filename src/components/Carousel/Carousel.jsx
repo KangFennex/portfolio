@@ -1,9 +1,9 @@
-import "./carousel.scss"
-import { projects } from "../../Constants/constants";
+import "./carousel.scss";
+import { projects } from "../../constants/constants";
 import { useState } from "react";
 import { PiArrowFatLinesLeftBold, PiArrowFatLinesRightBold } from "react-icons/pi";
 import ProjectCard from "../projectCard/ProjectCard";
-import { motion, useAnimation } from "framer-motion"
+import { motion, useAnimation } from "framer-motion";
 
 const Carousel = () => {
     const [expand, setExpand] = useState(false);
@@ -41,8 +41,7 @@ const Carousel = () => {
                 >
                     {projects.map((project, i) => {
                         return (
-                            <div
-                            >
+                            <div key={i} className="carousel__container__item">
                                 <ProjectCard
                                     expand={expand}
                                     handleExpand={handleExpand}

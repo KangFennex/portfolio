@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Themes } from "../../components/themes/themes";
 import { LightModeContext } from "../../components/utils/LightModeContext";
 import { NavbarMenu } from "./navbarMenu";
+import SoundControl from "../../components/soundControl/SoundControl";
 
 
 const Navbar = () => {
@@ -123,10 +124,15 @@ const Navbar = () => {
             exit="exit"
           >
             <div className="navbar__container__menu__close">
-            <IoCloseSharp size={40} onClick={() => closeMenu()} />
+            <IoCloseSharp size={40} onClick={closeMenu} />
             </div>
-            <NavbarMenu />
+            <NavbarMenu onClick={closeMenu} />
+
+            <div className="navbar__container__menu__themes-sound">
             <Themes />
+            <SoundControl />
+            </div>
+            
           </motion.div>
         )}
 </AnimatePresence>
