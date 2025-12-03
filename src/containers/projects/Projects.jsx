@@ -1,4 +1,4 @@
-import "../../sass/pages/_index.scss"
+import "../../sass/pages/_index.scss";
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
 import { projects } from "../../constants/constants";
 import { useEffect, useState, useRef } from "react";
