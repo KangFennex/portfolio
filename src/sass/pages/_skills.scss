@@ -30,13 +30,13 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+      gap: 0.3rem;
 
       &__skills-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         position: relative;
-        gap: 0;
       }
 
       &__skills-icon {
