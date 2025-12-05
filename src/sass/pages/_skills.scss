@@ -1,6 +1,6 @@
 .skills {
   width: 100vw;
-  padding-top: 10rem;
+  padding-top: 5rem;
 
   &__container {
     display: flex;
@@ -39,7 +39,7 @@
       }
 
       &__skills-icon {
-        width: 5rem;
+        width: 3rem;
 
         &__label {
           background-color: var(--dark);

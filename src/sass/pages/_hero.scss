@@ -9,12 +9,14 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 0 1rem;
 
       & h4 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         font-weight: 400;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
 
       &.light-mode {
         color: var(--black);
@@ -26,19 +28,19 @@
       }
 
     &__intro {
-      width: 90%;
+      width: 95%;
       display: flex;
       align-items: center;
       flex-direction: column;
       text-align: center;
       gap: 1rem;
-      font-size: 1.5rem;
-      margin-top: -1rem;
+      font-size: 1rem;
+      margin-top: 0;
 
       & p {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 400;
-        line-height: 2.5rem;
+        line-height: 1.6rem;
       }
 
       &.light-mode {
@@ -51,7 +53,8 @@
     }
 
       &__contact {
-        margin-top: 3rem;
+        margin-top: 2rem;
+        padding: 0 1rem;
       }
 
   }
@@ -60,9 +63,25 @@
 @media screen and (min-width: 768px) {
   .hero {
     &__container {
+      gap: 2rem;
+      padding: 0 2rem;
+
+      & h4 {
+        font-size: 2.5rem;
+      }
+
       &__intro {
         width: 80%;
+        font-size: 1.5rem;
 
+        & p {
+          font-size: 1.5rem;
+          line-height: 2.5rem;
+        }
+      }
+
+      &__contact {
+        margin-top: 3rem;
       }
     }
   }

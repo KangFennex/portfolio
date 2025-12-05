@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 15rem;
+    margin-top: 3rem;
     gap: 2rem;
 
     &__nav-buttons {
@@ -13,7 +13,7 @@
     }
 
     &__outer-container {
-        width: 80%;
+        width: 90%;
         margin: auto;
         overflow: hidden;
     }
@@ -22,7 +22,21 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        gap: 4rem;
+        gap: 2rem;
 
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .carousel {
+        margin-top: 15rem;
+
+        &__container {
+            gap: 4rem;
+        }
+
+        &__outer-container {
+            width: 80%;
+        }
     }
 }

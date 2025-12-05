@@ -10,13 +10,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 0;
     width: 100%;
     height: 100%;
 
     &__logo {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       margin-left: 1rem;
 
@@ -43,7 +43,7 @@
       }
 
       &__icon {
-        margin-right: 1.5rem;
+        margin-right: 1rem;
         transition: transform 0.5s ease;
         cursor: pointer;
 
