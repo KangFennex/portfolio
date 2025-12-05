@@ -1,6 +1,5 @@
 import "../../sass/pages/_index.scss"
 import { BsGithub, BsLinkedin, BsInstagram } from "react-icons/bs";
-import { PiCactusBold } from "react-icons/pi";
 
 const Contact = () => {
   return (
@@ -18,9 +17,6 @@ const Contact = () => {
           </a>
         </div>
         <div className="contact__copyright">
-          <div className="contact__icon">
-            <PiCactusBold size={80} style={{ color: 'var(--orange)' }} />
-          </div>
           <h4>Copyright Kangkm 2025</h4>
         </div>
       </div>

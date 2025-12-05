@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import { useRef } from "react";
 import { GiDesert } from "react-icons/gi";
+import { PiCactusBold } from "react-icons/pi";
 const SERVICE_ID = process.env.SERVICE_ID;
 const TEMPLATE_ID = process.env.TEMPLATE_ID;
 const PUBLIC_KEY = process.env.PUBLIC_KEY;
@@ -38,7 +39,7 @@ const ContactForm = () => {
     <div className="contact-form">
       <div className="contact-form__container">
         <form ref={form} onSubmit={handleOnSubmit}>
-          <GiDesert className="contact-form__icon" size={60} />
+          <PiCactusBold className="contact-form__icon" size={80} />
           <input
             className="contact-form__name-input contact-form__input"
             type="text"

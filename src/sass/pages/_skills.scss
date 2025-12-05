@@ -9,8 +9,8 @@
     &__frame {
       display: flex;
       flex-direction: column-reverse;
-      width: 80%;
-      min-height: 35rem;
+      width: 85%;
+      min-height: 30rem;
       margin-top: 3rem;
     }
 
@@ -30,24 +30,26 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      padding-top: 3rem;
 
       &__skills-container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
+        gap: 0;
       }
 
       &__skills-icon {
-        width: 3rem;
+        width: 3.5rem;
 
         &__label {
+          position: absolute;
+          bottom: -2.5rem;
           background-color: var(--dark);
           color: var(--light-grayish-blue);
-          padding: 0.3rem;
           border-radius: 5px;
           width: fit-content;
-          padding: 0.3rem 1rem;
+          padding: 0.2rem 0.6rem;
           opacity: 0;
           transition: opacity 1s ease-in;
 
@@ -88,6 +90,7 @@
       &__skills {
         margin: auto;
         width: 80%;
+        padding-top: 3rem;
 
         &__skills-container {
           flex-direction: column;
