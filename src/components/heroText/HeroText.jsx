@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { LightModeContext } from "../utils/LightModeContext";
 
 const HeroText = () => {
-  const name = "Kangkm?";
+  const name = "Welcome to my oasis";
 
   const { lightMode } = useContext(LightModeContext);
 
@@ -16,18 +16,19 @@ const HeroText = () => {
         transition={{ duration: 2 }}
         className={`hero-text__h1 ${lightMode ? "light-mode" : "dark-mode"}`}
       >
-        <span className="hero-text__top bounce">Who's</span>
         <div>
-          {name.split("").map((char, index) => {
-            if (char === " ") {
-              return " ";
-            }
-            return (
-              <span key={index} className="bounce">
-                {char}
+          {name.split(" ").map((word, wordIndex) => (
+            <>
+              <span key={wordIndex} className="hero-text__word">
+                {word.split("").map((char, charIndex) => (
+                  <span key={charIndex} className="bounce">
+                    {char}
+                  </span>
+                ))}
               </span>
-            );
-          })}
+              {wordIndex < name.split(" ").length - 1 && " "}
+            </>
+          ))}
         </div>
       </motion.h1>
     </div>

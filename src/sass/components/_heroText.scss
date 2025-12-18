@@ -7,13 +7,18 @@
   font-family: 'SuperMarioFont', sans-serif;
 
   &__h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: default;
-
+    
     &.light-mode {
       color: var(--dark);
       opacity: 86%;
     }
+  }
+
+  &__word {
+    display: inline-block;
+    white-space: nowrap;
   }
 
   &__top {
@@ -25,15 +30,15 @@
 @media screen and (min-width: 768px) {
   .hero-text {
     &__h1 {
-      font-size: 5rem;
-      text-wrap: nowrap;
+      font-size: 4rem;
     }
   }
 }
 
-@media screen and (min-width: 1624px) {
+@media screen and (min-width: 1024px) {
   .hero-text {
     &__h1 {
+      font-size: 5rem;
     }
   }
 }

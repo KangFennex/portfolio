@@ -1,7 +1,7 @@
 .contact {
   width: 100vw;
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 
   &__container {
     display: flex;
@@ -37,5 +37,19 @@
     color: var(--light-grayish-blue);
     opacity: 0.66;
     gap: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
   }
 }

@@ -1,4 +1,4 @@
-import "../../sass/components/_index.scss"
+import "../../sass/themes/_index.scss";
 import { GiSoundOff, GiSoundOn } from "react-icons/gi";
 import { useContext } from "react";
 import { LightModeContext } from "../utils/LightModeContext";

@@ -7,15 +7,23 @@ import useWindowSize from "../../components/utils/useWindowSize";
 import { BiExpand } from "react-icons/bi";
 import ProjectCard from "../../components/projectCard/ProjectCard";
 
-const Projects = () => {
+const Projects = ({ displayCurrentProject, setDisplayCurrentProject }) => {
   const [expand, setExpand] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(displayCurrentProject ? displayCurrentProject : null);
   const [startIndex, setStartIndex] = useState(0);
   const { width } = useWindowSize();
   const largeWidth = width > 768 ? true : false;
   const projectsPerPage = largeWidth ? 6 : 2;
-  const [selectedProject, setSelectedProject] = useState(null);
   const modalRef = useRef();
   const [flipCards, setFlipCards] = useState(false);
+
+  // Preload all project images
+  useEffect(() => {
+    projects.forEach((project) => {
+      const img = new Image();
+      img.src = project.image;
+    });
+  }, []);
 
   const handleExpand = (id) => {
     const project = projects.find((project) => project.id === id);
@@ -26,9 +34,32 @@ const Projects = () => {
     } else {
       setExpand(!expand)
     }
-    
+    if (displayCurrentProject) {
+      setDisplayCurrentProject(null)
+    }
     setSelectedProject(project)
   }
+
+  useEffect(() => {
+    if (displayCurrentProject) {
+      // Find the index of the project in the projects array
+      const projectIndex = projects.findIndex(p => p.id === displayCurrentProject);
+      
+      if (projectIndex !== -1) {
+        // Calculate which "page" this project is on
+        const targetPage = Math.floor(projectIndex / projectsPerPage);
+        const targetStartIndex = targetPage * projectsPerPage;
+        
+        // Set the start index to show the correct page
+        setStartIndex(targetStartIndex);
+        
+        // Find and set the selected project
+        const project = projects.find(p => p.id === displayCurrentProject);
+        setSelectedProject(project);
+        setExpand(true);
+      }
+    }
+  }, [displayCurrentProject, projectsPerPage])
 
   const handleNext = () => {
     const newIndex = Math.min(startIndex + projectsPerPage, projects.length - projectsPerPage);

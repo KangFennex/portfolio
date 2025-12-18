@@ -6,8 +6,12 @@ import { LightModeContext } from "../../components/utils/LightModeContext";
 import { currentProjects, skills } from "../../constants/constants";
 import { Link } from "react-router-dom";
 
-const Current = () => {
+const Current = ({ setDisplayCurrentProject }) => {
     const { lightMode } = useContext(LightModeContext);
+
+    const handleClickCurrentProject = (id) => {
+        setDisplayCurrentProject(id)
+    }
 
     return (
         <nav id="current" className="current">
@@ -19,7 +23,9 @@ const Current = () => {
                     <h4>DESCRIPTION</h4>
                 </div>
                 {currentProjects.map((item) => (
+                    <Link to="/projects" aria-label="Navigate to this project" className="current__container__link" onClick={() => handleClickCurrentProject(item.id)}>
                     <div key={item.id} className="current__container__item">
+                        <div className="current__container__item__inner-wrapper">
                         <h3 className={`current__container__item__title ${lightMode ? "light-mode" : "dark-mode"}`}>{item.title}</h3>
                         <div className="current__container__item__tech">
                             {item.tech && item.tech.map((icon, index) => {
@@ -39,7 +45,12 @@ const Current = () => {
                             })}
                         </div>
                         <p className={`current__container__item__description ${lightMode ? "light-mode" : "dark-mode"}`}>{item.description}</p>
+                        </div>
+                        <div className="current__container__item__img">
+                            <img src={item.image} alt={`${item.title} Visual`}/>
+                        </div>
                     </div>
+                    </Link>
                 ))}
             </div>
             <div className="current__button">

@@ -1,9 +1,9 @@
+import "../../sass/components/_index.scss";
 import { useState, useRef, useEffect, useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoCloseSharp } from "react-icons/io5";
 import { LightModeContext } from "../utils/LightModeContext";
 import ContactForm from "../contactForm/ContactForm";
-import "./contactModal.scss";
 
 const ContactModal = ({ buttonText = "Get in touch" }) => {
     const [showContact, setShowContact] = useState(false);

@@ -1,4 +1,4 @@
-import "./carousel.scss";
+import "../../sass/components/_index.scss";
 import { projects } from "../../constants/constants";
 import { useState } from "react";
 import { PiArrowFatLinesLeftBold, PiArrowFatLinesRightBold } from "react-icons/pi";

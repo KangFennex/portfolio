@@ -1,10 +1,9 @@
 import "../../sass/pages/_index.scss"
-//import HeroText from "../../components/heroText/HeroText"
 import { GiOasis } from "react-icons/gi";
 import { useContext } from "react";
 import { LightModeContext } from "../../components/utils/LightModeContext";
 import ContactModal from "../../components/contactModal/ContactModal";
-import HeroText from "../../components/heroText/HeroText2";
+import HeroText from "../../components/heroText/HeroText";
 
 const Hero = () => {
   const { lightMode } = useContext(LightModeContext);

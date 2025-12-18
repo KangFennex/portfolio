@@ -1,8 +1,11 @@
 .skills {
   width: 100vw;
-  padding-top: 5rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 
   &__container {
+    width: 90%;
+    margin: auto;
     display: flex;
     justify-content: center;
 
@@ -73,7 +76,8 @@
 
 @media (min-width: 768px) {
   .skills {
-    padding-top: 15rem;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
 
     &__container {
       &__frame {
@@ -112,6 +116,13 @@
         padding: 18px 34px;
       }
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
   }
 }
 

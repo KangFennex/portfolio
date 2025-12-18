@@ -182,16 +182,18 @@ const skills = [
 
 const currentProjects = [
   {
-    id: 1,
+    id: 3,
     title: "Backrolls",
     tech: [reactjs, nextjs, supabase, zustand, drizzle, trpc ],
     description: "An interactive website for quotes from famous TV Shows.",
+    image: space,
   },
   {
-    id: 2,
+    id: 9,
     title: "Immersive Portfolio",
     tech: [reactjs, mongodb, zustand, tailwind],
     description: "A windows-inspired portfolio showcasing my projects.",
+    image: sneakers,
   },
 ];
 
