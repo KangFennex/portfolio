@@ -4,7 +4,8 @@
   align-items: center;
   position: relative;
   flex-direction: column;
-  width: 30rem;
+  width: auto;
+  max-width: 30rem;
   height: 40rem;
   background-color: rgb(80, 60%, 40%, 0.67);
   border-radius: 15px;
@@ -87,9 +88,15 @@
     text-align: center;
   }
 
-  &__summary h3 {
-    line-height: 2rem;
+  &__summary p {
     overflow: scroll;
+    width: 90%;
+    margin: auto;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    color: rgb(80, 60%, 40%);
+    text-align: justify;
+    text-indent: 40px;
 
     &::-webkit-scrollbar {
       display: none;

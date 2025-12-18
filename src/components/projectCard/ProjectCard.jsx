@@ -35,7 +35,7 @@ const ProjectCard = ({ handleExpand, id, title, subtitle, image, summary, featur
                     </div>
                     <div className="project-card__summary">
                         <h2>Summary</h2>
-                        <h3>{summary}</h3>
+                        <p>{summary}</p>
                     </div>
                     <div className="project-card__features">
                         <h2>Features</h2>
@@ -64,6 +64,7 @@ const ProjectCard = ({ handleExpand, id, title, subtitle, image, summary, featur
                                 href={link}
                                 rel="noReferrer"
                                 target="_blank"
+                                className="mario-font"
                             >
                                 DEMO
                             </a>
