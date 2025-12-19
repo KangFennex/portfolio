@@ -39,39 +39,34 @@
 
 html,
 body {
-        font-family: "Nunito", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 700;
-        font-style: normal;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 body {
   width: 100vw;
   max-width: 100vw;
   min-height: 100vh;
+  /* Use 100dvh for better mobile support */
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
   position: relative;
   overflow-x: hidden;
-
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../../assets/background/desert-gb-freepikj.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -2;
-  }
+  /* Apply background directly to body */
+  background-image: url("../../assets/background/desert-gb-freepikj.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .App {
   max-width: 100vw;
   min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
 
   &::before {
@@ -79,8 +74,12 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Use dvh for dynamic viewport height on mobile */
+    height: 100dvh;
     pointer-events: none;
     z-index: -1;
   }
@@ -91,7 +90,7 @@ body {
 }
 
 .App.light-mode::before {
-  background-color: var(--light-grey);
+  background-color: var(--dark-opacity);
 }
 
 .mario-font {

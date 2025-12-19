@@ -134,11 +134,19 @@
       justify-content: center;
       align-items: center;
       margin-top: -0.8rem;
+
+      & div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+        max-width: 10rem;
+      }
     }
   }
 
   &__tech img {
-    width: 2.5rem;
+    width: 2rem;
 
     &:hover {
       animation: rotate 2s linear infinite;
