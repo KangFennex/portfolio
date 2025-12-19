@@ -36,6 +36,7 @@ import templeSeti from "../assets/projectsImg/temple-of-seti.png";
 import yelpCamp from "../assets/projectsImg/yelpCamp.png";
 import clock25 from "../assets/projectsImg/clock25.png";
 import space from "../assets/projectsImg/space-tourism.png";
+import backrolls from "../assets/projectsImg/backrolls.png";
 
 const introduction = {
   text: [
@@ -180,28 +181,34 @@ const skills = [
   },
 ];
 
-const currentProjects = [
-  {
-    id: 3,
-    title: "Backrolls",
-    tech: [reactjs, nextjs, supabase, zustand, drizzle, trpc ],
-    description: "An interactive website for quotes from famous TV Shows.",
-    image: space,
-  },
-  {
-    id: 9,
-    title: "Immersive Portfolio",
-    tech: [reactjs, mongodb, zustand, tailwind],
-    description: "A windows-inspired portfolio showcasing my projects.",
-    image: sneakers,
-  },
-];
-
 const projects = [
   {
-    id: 14,
-    value: "Space Tourism Website",
+    id: 1,
+    title: "Backrolls",
+    category: "website",
+    technologies: [reactjs, nextjs, supabase, drizzle, trpc, zustand, tailwind],
+    image: backrolls,
+    subtitle: "An interactive website for quotes from RuPaul's Drag Race.",
+    summary: "Backrolls is a web platform that allows users to explore, share, and contribute quotes from the TV show RuPaul's Drag Race. Built with Next.js and Supabase, it offers a seamless user experience with features like user authentication, quote submission, and interactive browsing.",
+    features: ["Next.js", "Supabase", "User Authentication", "Drizzle / tRPC",],
+    link: "https://backrolls.vercel.app",
+  },
+  {
+    id: 2,
+    title: "Immersive Portfolio",
+    category: "website",
+    technologies: [reactjs, mongodb, zustand, tailwind],
+    image: sneakers,
+    subtitle: "A windows-inspired portfolio showcasing my projects.",
+    summary: "This portfolio is designed to provide an immersive experience, drawing inspiration from classic Windows interfaces. It showcases my projects in a unique and engaging way, utilizing React for dynamic content rendering and MongoDB for data management.",
+    features: ["React.js", "MongoDB", "Zustand", "Tailwind CSS"],
+    link: "https://immersive-portfolio-kangkm.vercel.app",
+  },
+  {
+    id: 3,
+    title: "Space Tourism Website",
     technologies: [reactjs, scss],
+    category: "website",
     image: space,
     subtitle: "Space Tourism showcases it's destinations, crew, and tech",
     summary: "Space Tourism is a inter-planetary shuttle service. The website includes three different types of smooth transitions.",
@@ -210,8 +217,8 @@ const projects = [
 
   },
   {
-    id: 7,
-    value: "Personal Portfolio",
+    id: 5,
+    title: "Personal Portfolio",
     category: "website",
     technologies: [reactjs, scss],
     image: portfolio,
@@ -221,8 +228,8 @@ const projects = [
     link: "https://kangkm.netlify.app",
   },
   {
-    id: 12,
-    value: "Sneakers Landing Page",
+    id: 4,
+    title: "Sneakers Landing Page",
     category: "website",
     technologies: [reactjs, tailwind],
     image: sneakers,
@@ -232,8 +239,8 @@ const projects = [
     link: "https://sneaker-product-landing-page.netlify.app"
   },
   {
-    id: 2,
-    value: "Bankist App",
+    id: 6,
+    title: "Bankist App",
     category: "website",
     technologies: [javascript, css],
     image: bankist2,
@@ -250,8 +257,8 @@ const projects = [
     link: "https://famous-moonbeam-55d065.netlify.app",
   },
   {
-    id: 1,
-    value: "Bankist Website",
+    id: 7,
+    title: "Bankist Website",
     category: "website",
     technologies: [javascript, css],
     image: bankist,
@@ -270,8 +277,8 @@ const projects = [
       "https://github.com/KangFennex/Bankist-Website---Javascript-Course/tree/main",
   },
   {
-    id: 10,
-    value: "News Homepage",
+    id: 9,
+    title: "News Homepage",
     category: "website",
     technologies: [javascript, css],
     image: newsHomepage,
@@ -282,8 +289,8 @@ const projects = [
     link: "https://news-homepage-frontend-mentor1.netlify.app",
   },
   {
-    id: 11,
-    value: "Softway Grocery",
+    id: 8,
+    title: "Softway Grocery",
     category: "website",
     technologies: [reactjs, redux, css],
     image: softway,
@@ -298,8 +305,8 @@ const projects = [
     link: "https://softway-grocery-app.netlify.app",
   },
   {
-    id: 4,
-    value: "Markdown Previewer",
+    id: 10,
+    title: "Markdown Previewer",
     category: "tool",
     technologies: [reactjs, css],
     image: markdown,
@@ -310,8 +317,8 @@ const projects = [
     link: "https://dainty-boba-245427.netlify.app",
   },
   {
-    id: 5,
-    value: "Drum Machine",
+    id: 11,
+    title: "Drum Machine",
     category: "tool",
     technologies: [reactjs, css],
     image: drumMachine,
@@ -322,8 +329,8 @@ const projects = [
     link: "https://rad-crumble-fbf99b.netlify.app",
   },
   {
-    id: 14,
-    value: "25 + 5 Clock",
+    id: 12,
+    title: "25 + 5 Clock",
     category: "tool",
     technologies: [css],
     image: clock25,
@@ -333,8 +340,8 @@ const projects = [
     link: "https://illustrious-conkies-89d8c1.netlify.app",
   },
   {
-    id: 3,
-    value: "Random Quote Machine",
+    id: 13,
+    title: "Random Quote Machine",
     category: "tool",
     technologies: [reactjs, api, css],
     image: quoteMachine,
@@ -345,8 +352,8 @@ const projects = [
     link: "https://random-quote-machine-fcc-kangkm.netlify.app",
   },
   {
-    id: 9,
-    value: "The Temple of Seti I",
+    id: 14,
+    title: "The Temple of Seti I",
     category: "website",
     technologies: [javascript, css],
     image: templeSeti,
@@ -396,4 +403,4 @@ const oldProjects = [
   },
 ];
 
-export { introduction, skills, currentProjects, projects };
+export { introduction, skills, projects };

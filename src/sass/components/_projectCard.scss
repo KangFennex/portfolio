@@ -171,7 +171,8 @@
 @media (min-width: 768px) and (max-width: 1440px) {
   .project-card {
     width: 60rem;
-      height: 32rem;
+    height: 32rem;
+    max-width: none;
 
     &__img {
       display: flex;

@@ -54,8 +54,6 @@
             }
 
         &__item {
-            display: flex;
-            justify-content: space-between;
             transition: all 0.3s ease;
 
             &:hover {
@@ -70,6 +68,7 @@
             grid-template-areas:
                 "title"
                 "tech"
+                "image"
                 "description";
             gap: 0.75rem;
             padding: 1rem;
@@ -80,13 +79,14 @@
             }
 
             &__title {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
                 font-weight: 600;
                 margin: 0;
                 grid-area: title;
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
+                transition: color 0.3 ease-in-out;
 
                 &.light-mode {
                     color: var(--light-text);
@@ -95,13 +95,16 @@
                 &.dark-mode {
                     color: rgba(255, 255, 255, 0.7);
                 }
+
+                &.dark-mode:hover {
+                    color: var(--orange);
+                }
             }
 
             &__tech {
                 display: flex;
                 align-items: center;
                 grid-area: tech;
-                justify-content: flex-start;
                 margin-left: 0;
                 gap: 0.75rem;
 
@@ -112,8 +115,8 @@
                 }
 
                 &__icon {
-                    width: 24px;
-                    height: 24px;
+                    width: 23px;
+                    height: 23px;
                     object-fit: contain;
                     transition: transform 0.3s ease-in-out;
                     cursor: pointer;
@@ -167,10 +170,24 @@
                 }
             }
 
-            &__img {
+            &__img--mobile {
+                grid-area: image;
+                width: 100%;
+                max-height: 250px;
+                margin: 0 auto;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 15px;
+                }
+            }
+
+            &__img--desktop {
                 width: 30%;
                 height: 100%;
                 margin: auto;
+                display: none;
 
                 & img {
                     width: 100%;
@@ -189,7 +206,25 @@
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 564px) { 
+    .current__container__item {
+    
+    &__tech {
+        justify-content: center;
+
+        &__icon {
+            width: 33px;
+            height: 33px;
+        }
+    }
+
+    &__img--mobile {
+        width: 80%;
+    }
+}
+}
+
+@media (min-width: 764px) {
     .current {
         padding-top: 6rem;
         padding-bottom: 3rem;
@@ -199,7 +234,8 @@
 
             &__header {
                 width: 75%;
-                grid-template-columns: 0.5fr 120px 2fr;
+                grid-template-columns: 0.4fr 130px 2fr;
+                            padding: 0.7rem 0;
 
                 h4:nth-child(2),
                 h4:last-child {
@@ -209,6 +245,7 @@
             }
 
             &__item {
+                display: flex;
                 margin-top: 1rem;
 
                 &:hover {
@@ -216,8 +253,9 @@
                 }
 
                 &__inner-wrapper {
-                grid-template-columns: 0.5fr 120px 2fr;
+                grid-template-columns: 0.4fr 130px 2fr;
                 grid-template-areas: none;
+                padding: 0;
                 }
 
                 &__title {
@@ -238,19 +276,24 @@
                     }
 
                     &__label {
-                        font-size: 0.75rem;
+                        font-size: 0.5rem;
                     }
                 }
 
                 &__description {
                     grid-area: auto;
-                    font-size: 1.5rem;
+                    font-size: 1.3rem;
                     line-height: 1.6;
                 }
 
-                &__img {
+                &__img--mobile {
+                    display: none;
+                }
+
+                &__img--desktop {
                     width: 25%;
                     min-width: 25%;
+                    display: flex;
                 }
             }
         }
