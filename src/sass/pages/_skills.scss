@@ -5,6 +5,7 @@
 
   &__container {
     width: 90%;
+    max-width: 2200px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -123,6 +124,10 @@
   .skills {
     padding-top: 8rem;
     padding-bottom: 4rem;
+
+    &__container__skills__skills-icon {
+      width: 6.5rem;
+    }
   }
 }
 

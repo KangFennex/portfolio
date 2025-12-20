@@ -11,8 +11,13 @@
     cursor: default;
     
     &.light-mode {
-      color: var(--dark);
-      opacity: 86%;
+      color: var(--black);
+      opacity: 1;
+    }
+
+    &.dark-mode {
+      color: var(--light-grayish-blue);
+      opacity: 0.86;
     }
   }
 
@@ -38,7 +43,7 @@
 @media screen and (min-width: 1024px) {
   .hero-text {
     &__h1 {
-      font-size: 5rem;
+      font-size: 8rem;
     }
   }
 }

@@ -25,7 +25,7 @@ const About = () => {
 
   return (
     <nav id="about" className="about">
-      <SectionTitle title="About me" subtitle="Who that" />
+      <SectionTitle title="About me" />
       <motion.div
         initial="offscreen"
         whileInView="onscreen"

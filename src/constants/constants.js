@@ -37,23 +37,22 @@ import yelpCamp from "../assets/projectsImg/yelpCamp.png";
 import clock25 from "../assets/projectsImg/clock25.png";
 import space from "../assets/projectsImg/space-tourism.png";
 import backrolls from "../assets/projectsImg/backrolls.png";
+import altPortfolio from "../assets/projectsImg/alt-portfolio.png";
 
 const introduction = {
   text: [
-    "I'm Michel, a passionate and driven self-taught developer based in Manchester, UK.",
+    "I'm Michel, a self-taught developer based in Toronto, Canada, building my skills through hands-on pet projects.",
 
-    "I'm an academically-trained historian, but I now work with a variety of frontend and analytical languages, responsive frameworks, and database management systems.",
+    "I started coding as a hobby in 2020 and have been passionately learning ever since. My project, Backrolls, was born from noticing the incredible passion of RuPaul's Drag Race fans. I built it as a hub where the community can find, share, and contribute their favorite quotes from the show.",
 
-    "I'm most comfortable working with React and the MERN stack.",
+    "I'm most comfortable working with React, the MERN stack, Next.js, and TypeScript.",
 
-    "I'm currently building a web platform for event planning, mixing both corporate and private events, with a strong focus on social sharing and a client-side calendar-based planning.",
-
-    "When I'm not on my computer or exploring the city, I practice languages or read history.",
+    "When I'm not coding or exploring Toronto, I'm usually reading history books or practicing languages."
   ],
 };
 
 const skills = [
-    {
+  {
     id: "react",
     title: "React",
     icon: reactjs,
@@ -95,7 +94,7 @@ const skills = [
     label: "Javascript",
     category: "front-end",
   },
-    {
+  {
     id: "redux",
     title: "REDUX",
     icon: redux,
@@ -109,7 +108,7 @@ const skills = [
     label: "Zustand",
     category: "front-end",
   },
-    {
+  {
     id: "mongoose",
     title: "Mongoose",
     icon: mongoose,
@@ -123,7 +122,7 @@ const skills = [
     label: "Express",
     category: "back-end"
   },
-    {
+  {
     id: "css",
     title: "CSS",
     icon: css,
@@ -189,18 +188,18 @@ const projects = [
     technologies: [reactjs, nextjs, supabase, drizzle, trpc, zustand, tailwind],
     image: backrolls,
     subtitle: "An interactive website for quotes from RuPaul's Drag Race.",
-    summary: "Backrolls is a web platform that allows users to explore, share, and contribute quotes from the TV show RuPaul's Drag Race. Built with Next.js and Supabase, it offers a seamless user experience with features like user authentication, quote submission, and interactive browsing.",
+    summary: "Backrolls is a hub that allows users to explore, share, and contribute quotes from the TV show RuPaul's Drag Race. Built with React, Next.js and Supabase, it offers a seamless user experience with features like user authentication, quote submission, and interactive browsing.",
     features: ["Next.js", "Supabase", "User Authentication", "Drizzle / tRPC",],
     link: "https://backrolls.vercel.app",
   },
   {
     id: 2,
-    title: "Immersive Portfolio",
+    title: "Alternative Portfolio",
     category: "website",
     technologies: [reactjs, mongodb, zustand, tailwind],
-    image: sneakers,
+    image: altPortfolio,
     subtitle: "A windows-inspired portfolio showcasing my projects.",
-    summary: "This portfolio is designed to provide an immersive experience, drawing inspiration from classic Windows interfaces. It showcases my projects in a unique and engaging way, utilizing React for dynamic content rendering and MongoDB for data management.",
+    summary: "This windows-inspired portfolio draws inspiration from the classic Windows interface. It showcases my projects in a immersive way, utilizing React for dynamic content rendering, MongoDb for data management, Zustand for state management, and Tailwind CSS for styling.",
     features: ["React.js", "MongoDB", "Zustand", "Tailwind CSS"],
     link: "https://immersive-portfolio-kangkm.vercel.app",
   },
@@ -365,7 +364,7 @@ const projects = [
 ];
 
 const oldProjects = [
-    {
+  {
     id: 6,
     value: "Discount Calculator",
     category: "tool",
@@ -378,7 +377,7 @@ const oldProjects = [
     features: ["vanilla JS"],
     link: "https://calculateur-rabais-pex.netlify.app",
   },
-    {
+  {
     id: 8,
     value: "Housing Marketplace",
     category: "website",
@@ -390,7 +389,7 @@ const oldProjects = [
     features: ["AWS user login", "Create/edit listings", "Profile view"],
     link: "https://bright-mandazi-d30993.netlify.app",
   },
-    {
+  {
     id: 13,
     value: "YelpCamp",
     category: "website",

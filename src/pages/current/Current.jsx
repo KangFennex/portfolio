@@ -20,15 +20,15 @@ const Current = ({ setDisplayCurrentProject }) => {
     return (
         <nav id="current" className="current">
             <SectionTitle title="What I'm up to" />
-            <div className="current__container">
+            <div className={`current__container ${lightMode ? "light-mode" : "dark-mode"}`}>
                 <div className="current__container__header">
-                    <h4>PROJECT</h4>
-                    <h4 className="current__container__header__tech">TECH</h4>
-                    <h4>DESCRIPTION</h4>
+                    <h4 className={`${lightMode ? "light-mode" : "dark-mode"}`}>PROJECT</h4>
+                    <h4 className={`current__container__header__tech ${lightMode ? "light-mode" : "dark-mode"}`}>TECH</h4>
+                    <h4 className={`${lightMode ? "light-mode" : "dark-mode"}`}>DESCRIPTION</h4>
                 </div>
                 {currentProjects.map((item) => (
                     <Link to="/projects" aria-label="Navigate to this project" className="current__container__link" onClick={() => handleClickCurrentProject(item.id)}>
-                    <div key={item.id} className="current__container__item">
+                    <div key={item.id} className={`current__container__item ${lightMode ? "light-mode" : "dark-mode"}`}>
                         <div className="current__container__item__inner-wrapper">
                         <div className="current__container__item__img--mobile">
                             <img src={item.image} alt={`${item.title} Visual`}/>

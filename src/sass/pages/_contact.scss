@@ -18,7 +18,15 @@
     margin-top: 0.5rem;
 
     & a {
-      color: var(--light-grayish-blue);
+      transition: opacity 0.3s ease;
+
+      &.light-mode {
+        color: var(--dark);
+      }
+
+      &.dark-mode {
+        color: var(--light-grayish-blue);
+      }
     }
 
     &-github {opacity: 0.86};
@@ -34,9 +42,16 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 0.5rem;
-    color: var(--light-grayish-blue);
     opacity: 0.66;
     gap: 0.5rem;
+
+    &.light-mode {
+      color: var(--dark-grey);
+    }
+
+    &.dark-mode {
+      color: var(--light-grayish-blue);
+    }
   }
 }
 

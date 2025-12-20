@@ -1,8 +1,11 @@
 import "../../sass/components/_index.scss"
 import { BiExpand } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
+import { useContext } from "react";
+import { LightModeContext } from "../utils/LightModeContext";
 
 const ProjectCard = ({ handleExpand, id, title, subtitle, image, summary, features, technologies, link }) => {
+    const { lightMode } = useContext(LightModeContext);
 
     return (
         <>
@@ -13,7 +16,7 @@ const ProjectCard = ({ handleExpand, id, title, subtitle, image, summary, featur
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
                 transition={{ type: 'spring', ease: 0.32, damping: 10, stiffness: 40 }}
-                className={`project-card`}
+                className={`project-card ${lightMode ? "light-mode" : "dark-mode"}`}
             >
                 <BiExpand
                     size={35}
@@ -28,26 +31,26 @@ const ProjectCard = ({ handleExpand, id, title, subtitle, image, summary, featur
                     alt="project"
                     className="project-card__img"
                 />
-                <div className="project-card__description">
+                <div className={`project-card__description ${lightMode ? "light-mode" : "dark-mode"}`}>
                     <div className="project-card__title">
-                        <h2>{title}</h2>
-                        <h3>{subtitle}</h3>
+                        <h2 className={`${lightMode ? "light-mode" : "dark-mode"}`}>{title}</h2>
+                        <h3 className={`${lightMode ? "light-mode" : "dark-mode"}`}>{subtitle}</h3>
                     </div>
                     <div className="project-card__summary">
-                        <h2>Summary</h2>
-                        <p>{summary}</p>
+                        <h2 className={`${lightMode ? "light-mode" : "dark-mode"}`}>Summary</h2>
+                        <p className={`${lightMode ? "light-mode" : "dark-mode"}`}>{summary}</p>
                     </div>
                     <div className="project-card__features">
-                        <h2>Features</h2>
+                        <h2 className={`${lightMode ? "light-mode" : "dark-mode"}`}>Features</h2>
                         <div className="project-card__features-items">
                             {features.map((feature, i) => {
-                                return <h3 key={i}>{feature}</h3>;
+                                return <h3 className={`${lightMode ? "light-mode" : "dark-mode"}`} key={i}>{feature}</h3>;
                             })}
                         </div>
                     </div>
                     <div className="project-card__tech">
                         <div className="project-card__tech-items">
-                            <h2>Tech used</h2>
+                            <h2 className={`${lightMode ? "light-mode" : "dark-mode"}`}>Tech used</h2>
                             <div>
                                 {technologies.map((tech, i) => {
                                     return (
@@ -64,7 +67,7 @@ const ProjectCard = ({ handleExpand, id, title, subtitle, image, summary, featur
                                 href={link}
                                 rel="noReferrer"
                                 target="_blank"
-                                className="mario-font"
+                                className={`mario-font ${lightMode ? "light-mode" : "dark-mode"}`}
                             >
                                 DEMO
                             </a>

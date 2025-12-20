@@ -1,26 +1,25 @@
 .about {
-  width: 100vw;
-  padding-top: 3rem;
+  padding-top: 70px;
+  width: 100%;
+  height: 100vh;
 
   &__container {
-    width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: auto;
+    gap: 1rem;
+    padding-bottom: 5rem;
 
     &__text-container {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      font-family: "Poppins", sans-serif;
       font-size: 1rem;
-      font-weight: 500;
       text-align: center;
       width: 100%;
-      margin-top: 1rem;
       padding: 1rem;
       background-color: hsla(0, 1%, 14%, 0.2);
       border-radius: 35px;
@@ -33,8 +32,7 @@
       }
 
       &.dark-mode {
-        color: #dce3bb;
-        opacity: 86%;
+        color: var(--white-aged-parchment);
       }
 
       &.light-mode {
@@ -52,7 +50,7 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      margin-top: 3.5rem;
+      margin-top: 1.5rem;
 
       &__avatar {
         width: 12rem;
@@ -77,14 +75,15 @@
     padding-top: 5rem;
 
     &__container {
-      flex-direction: row-reverse;
+      width: 90%;
       justify-content: space-around;
-      padding-top: 5rem;
+      padding-top: 3rem;
       gap: 1rem;
 
       &__text-container {
         font-size: 1.4rem;
-        width: 55%;
+        width: 100%;
+        max-width: 60rem;
         padding: 1rem;
       }
 
@@ -93,7 +92,7 @@
         padding-right: 1rem;
 
         &__avatar {
-          width: 30rem;
+          width: 20rem;
         }
       }
     }

@@ -1,19 +1,21 @@
 import "../../sass/pages/_index.scss";
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
 import { projects } from "../../constants/constants";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { PiArrowFatLinesLeftBold, PiArrowFatLinesRightBold } from "react-icons/pi";
 import useWindowSize from "../../components/utils/useWindowSize";
 import { BiExpand } from "react-icons/bi";
 import ProjectCard from "../../components/projectCard/ProjectCard";
+import { LightModeContext } from "../../components/utils/LightModeContext";
 
 const Projects = ({ displayCurrentProject, setDisplayCurrentProject }) => {
   const [expand, setExpand] = useState(false);
   const [selectedProject, setSelectedProject] = useState(displayCurrentProject ? displayCurrentProject : null);
   const [startIndex, setStartIndex] = useState(0);
   const { width } = useWindowSize();
+  const { lightMode } = useContext(LightModeContext);
   const largeWidth = width > 768 ? true : false;
-  const projectsPerPage = largeWidth ? 6 : 2;
+  const projectsPerPage = largeWidth ? 2 : 2;
   const modalRef = useRef();
   const [flipCards, setFlipCards] = useState(false);
 
@@ -44,15 +46,15 @@ const Projects = ({ displayCurrentProject, setDisplayCurrentProject }) => {
     if (displayCurrentProject) {
       // Find the index of the project in the projects array
       const projectIndex = projects.findIndex(p => p.id === displayCurrentProject);
-      
+
       if (projectIndex !== -1) {
         // Calculate which "page" this project is on
         const targetPage = Math.floor(projectIndex / projectsPerPage);
         const targetStartIndex = targetPage * projectsPerPage;
-        
+
         // Set the start index to show the correct page
         setStartIndex(targetStartIndex);
-        
+
         // Find and set the selected project
         const project = projects.find(p => p.id === displayCurrentProject);
         setSelectedProject(project);
@@ -70,7 +72,7 @@ const Projects = ({ displayCurrentProject, setDisplayCurrentProject }) => {
       }, 600);
     }
   };
-  
+
   const handlePrevious = () => {
     const newIndex = Math.max(startIndex - projectsPerPage, 0);
     if (newIndex !== startIndex) {
@@ -108,21 +110,21 @@ const Projects = ({ displayCurrentProject, setDisplayCurrentProject }) => {
       handleClickOutside(event);
     }
 
-      document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mousedown", handleMouseDown);
 
-      return () => {
-        document.removeEventListener("mousedown", handleMouseDown);
-      }
-    
+    return () => {
+      document.removeEventListener("mousedown", handleMouseDown);
+    }
+
   }, [modalRef, expand, setExpand]);
 
   return (
     <div id="projects" className="projects">
-      <SectionTitle title="Stuff I've built" subtitle="Projects" />
+      <SectionTitle title="Projects" />
       <div className="projects-container">
         {!expand && (
           <div
-            className="projects-container__arrows-prev">
+            className={`projects-container__arrows-prev ${lightMode ? "light-mode" : "dark-mode"}`}>
             <PiArrowFatLinesLeftBold
               size={largeWidth ? 50 : 35}
               onClick={handlePrevious}
@@ -130,41 +132,40 @@ const Projects = ({ displayCurrentProject, setDisplayCurrentProject }) => {
             />
           </div>
         )}
-        <div className="projects-container__container"> 
-            {!expand &&
-              projects
-                .slice(startIndex, startIndex + projectsPerPage)
-                .map((project, i) => (
-                  <div
+        <div className="projects-container__container">
+          {!expand &&
+            projects
+              .slice(startIndex, startIndex + projectsPerPage)
+              .map((project, i) => (
+                <div
                   className={`projects-container__mini-card ${flipCards ? 'flipped' : ''}`}
-                    key={i}
-                  >
-                    <BiExpand
-                      size={35}
-                      className="projects-container__mini-card__icon"
-                      onClick={() => handleExpand(project.id)}
-                    />
-                    <img
+                  key={i}
+                >
+                  <BiExpand
+                    size={35}
+                    className="projects-container__mini-card__icon"
+                    onClick={() => handleExpand(project.id)}
+                  />
+                  <img
                     src={project.image}
                     className="projects-container__mini-card__img"
                     alt="Project"
-                    />
-                    <div className="projects-container__mini-card__description">
-                      <div className="projects-container__mini-card__title">
-                        <h2>{project.title}</h2>
-                        <h3>{project.subtitle}</h3>
-                      </div>
+                  />
+                  <div className={`projects-container__mini-card__description ${lightMode ? "light-mode" : "dark-mode"}`}>
+                    <div className="projects-container__mini-card__title">
+                      <h2 className={`${lightMode ? "light-mode" : "dark-mode"}`}>{project.title}</h2>
+                      <h3 className={`${lightMode ? "light-mode" : "dark-mode"}`}>{project.subtitle}</h3>
                     </div>
                   </div>
-                ))}
-          
+                </div>
+              ))}
         </div>
 
         {expand && selectedProject && (
           <div className="projects-container__overlay">
             <div
-            className="projects-container__modal"
-            ref={modalRef}
+              className="projects-container__modal"
+              ref={modalRef}
             >
               <ProjectCard
                 expand={expand}
@@ -184,13 +185,28 @@ const Projects = ({ displayCurrentProject, setDisplayCurrentProject }) => {
 
         {!expand && (
           <div
-            className="projects-container__arrows-next">
+            className={`projects-container__arrows-next ${lightMode ? "light-mode" : "dark-mode"}`}>
             <PiArrowFatLinesRightBold
               size={largeWidth ? 50 : 35}
               onClick={handleNext}
               disabled={startIndex + projectsPerPage >= projects.length}
             />
           </div>
+        )}
+
+        {!largeWidth && !expand && (
+          <span className={`projects-container__arrows--mobile ${lightMode ? "light-mode" : "dark-mode"}`}>
+            <PiArrowFatLinesLeftBold
+              size={largeWidth ? 50 : 35}
+              onClick={handlePrevious}
+              disabled={startIndex === 0}
+            />
+            <PiArrowFatLinesRightBold
+              size={largeWidth ? 50 : 35}
+              onClick={handleNext}
+              disabled={startIndex + projectsPerPage >= projects.length}
+            />
+          </span>
         )}
       </div>
     </div>

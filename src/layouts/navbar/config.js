@@ -5,7 +5,7 @@ export const NavbarEls = [
     isRoute: true,
   },
     {
-    title: "Skills",
+    title: "Tech",
     link: "#skills",
     isRoute: false,
   },

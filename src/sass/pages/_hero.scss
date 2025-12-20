@@ -87,13 +87,79 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+// Large screens - shorter/taller displays (16:10, 4:3, etc)
+@media screen and (min-width: 1024px) and (min-height: 700px) {
   .hero {
     &__container {
+      gap: 2.5rem;
+
+      & h4 {
+        font-size: 4rem;
+      }
+
+      & p {
+        font-size: 2rem;
+        line-height: 3.5rem;
+      }
+
       &__intro {
-        & p {
-          max-width: 1000px;
+        &__icon {
+          margin: 1.5rem 0;
         }
+
+        & p {
+          max-width: 1100px;
+        }
+      }
+
+      &__contact {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+// Wide screens with less height (16:9 and wider)
+@media screen and (min-width: 1024px) and (max-height: 699px) {
+  .hero {
+    &__container {
+      gap: 4rem;
+
+      & h4 {
+        font-size: 6rem;
+      }
+
+      & p {
+        font-size: 3rem;
+        line-height: 5rem;
+      }
+
+      &__intro {
+        &__icon {
+          margin: 2rem 0;
+        }
+
+        & p {
+          max-width: 1400px;
+        }
+      }
+    }
+  }
+}
+
+// Ultra-wide screens (wider aspect ratios)
+@media screen and (min-width: 1920px) and (max-height: 1080px) {
+  .hero {
+    &__container {
+      gap: 5rem;
+
+      & h4 {
+        font-size: 7rem;
+      }
+
+      & p {
+        font-size: 3.5rem;
+        line-height: 5.5rem;
       }
     }
   }

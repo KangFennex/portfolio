@@ -124,7 +124,7 @@ const Navbar = () => {
             exit="exit"
           >
             <div className="navbar__container__menu__close">
-            <IoCloseSharp size={40} onClick={closeMenu} />
+            <IoCloseSharp className={`${lightMode ? "light-mode" : "dark-mode"}`} size={40} onClick={closeMenu} />
             </div>
             <NavbarMenu onClick={closeMenu} />
 

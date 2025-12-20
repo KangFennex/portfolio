@@ -5,12 +5,20 @@
 
     &__container {
         width: 90%;
-        background-color: hsla(0, 1%, 14%, 0.2);
+        max-width: 1800px;
         border-radius: 35px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: all 0.5s ease-in-out;
         padding: 1rem 1rem;
         margin: 2rem auto;
+
+        &.light-mode {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        &.dark-mode {
+            background-color: hsla(0, 1%, 14%, 0.2);
+        }
 
         &:hover {
             box-shadow: 0 4px 8px hsla(0, 12%, 88%, 0.2);
@@ -29,13 +37,24 @@
                 font-size: 1.2rem;
                 font-weight: 600;
                 letter-spacing: 0.1em;
-                color: rgba(255, 255, 255, 0.7);
                 text-transform: uppercase;
                 transition: color 0.3s ease-in-out;
                 cursor: default;
 
-                &:hover {
+                &.light-mode {
+                    color: var(--dark);
+                }
+
+                &.dark-mode {
+                    color: rgba(255, 255, 255, 0.7);
+                }
+
+                &.dark-mode:hover {
                     color: orange;
+                }
+
+                &.light-mode:hover {
+                    color: var(--orange);
                 }
             }
 
@@ -58,8 +77,15 @@
 
             &:hover {
                 border-left-color: var(--sand-orange);
-                background-color: rgba(255, 255, 255, 0.02);
                 transform: translateX(3px);
+            }
+
+            &.light-mode:hover {
+                background-color: rgba(0, 0, 0, 0.03);
+            }
+
+            &.dark-mode:hover {
+                background-color: rgba(255, 255, 255, 0.02);
             }
 
             &__inner-wrapper {
@@ -89,7 +115,7 @@
                 transition: color 0.3 ease-in-out;
 
                 &.light-mode {
-                    color: var(--light-text);
+                    color: var(--dark);
                 }
 
                 &.dark-mode {
@@ -97,6 +123,10 @@
                 }
 
                 &.dark-mode:hover {
+                    color: var(--orange);
+                }
+
+                &.light-mode:hover {
                     color: var(--orange);
                 }
             }
@@ -246,7 +276,7 @@
 
             &__item {
                 display: flex;
-                margin-top: 1rem;
+                margin-top: 1.5rem;
 
                 &:hover {
                     transform: translateX(5px);
@@ -266,9 +296,11 @@
                 &__tech {
                     grid-area: auto;
                     justify-content: center;
+                    align-items: flex-start;
                     margin-left: 0;
                     flex-wrap: wrap;
                     max-width: 120px;
+                    height: fit-content;
 
                     &__icon {
                         width: 30px;

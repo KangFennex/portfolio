@@ -1,8 +1,11 @@
 import "../../sass/components/_index.scss"
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { LightModeContext } from "../utils/LightModeContext";
 
 const SectionTitle = (props) => {
   const { title, subtitle } = props;
+  const { lightMode } = useContext(LightModeContext);
 
   return (
     <motion.div
@@ -16,8 +19,8 @@ const SectionTitle = (props) => {
       }}
     >
       <div className="sectionTitle">
-        <div className="subtitle">{subtitle}</div>
-        <h2 className="title">{title}</h2>
+        <div className={`subtitle ${lightMode ? "light-mode" : "dark-mode"}`}>{subtitle}</div>
+        <h2 className={`title ${lightMode ? "light-mode" : "dark-mode"}`}>{title}</h2>
       </div>
     </motion.div>
   );
