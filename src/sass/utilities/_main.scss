@@ -69,7 +69,7 @@ top: 0;
 left: 0;
 width: 100vw;
 height: 100vh;
-background: url("../../assets/background/desert-gb-freepikj.png") no-repeat center center;
+background: url("../../assets/background/desert-bg3.png") no-repeat center center;
 background-size: cover;
 z-index: -1;
   &::before {
@@ -84,14 +84,6 @@ z-index: -1;
     pointer-events: none;
     z-index: -1;
   }
-}
-
-.fixed-bg.dark-mode::before {
-  background-color: var(--dark-opacity);
-}
-
-.fixed-bg.light-mode::before {
-  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .mario-font {
