@@ -20,7 +20,8 @@ function App() {
 
   return (
     <div className={`App ${lightMode ? "light-mode" : "dark-mode"}`}>
-      <div className="fixed-bg"></div>
+      {/* fixed background image */}
+        <div className={`fixed-bg ${lightMode ? "light-mode" : "dark-mode"}`}></div>
       {/* navbar component */}
       <Navbar />
       {/* main page content */}

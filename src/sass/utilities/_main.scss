@@ -61,7 +61,17 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   position: relative;
+}
 
+.fixed-bg {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background: url("../../assets/background/desert-gb-freepikj.png") no-repeat center center;
+background-size: cover;
+z-index: -1;
   &::before {
     content: '';
     position: fixed;
@@ -76,40 +86,12 @@ body {
   }
 }
 
-.App.dark-mode::before {
+.fixed-bg.dark-mode::before {
   background-color: var(--dark-opacity);
 }
 
-.App.light-mode::before {
+.fixed-bg.light-mode::before {
   background-color: rgba(255, 255, 255, 0.7);
-}
-
-.fixed-bg {
-
-position: fixed;
-
-top: 0;
-
-left: 0;
-
-width: 100vw;
-
-height: 100vh;
-
-background: url("../../assets/background/desert-gb-freepikj.png") no-repeat center center;
-
-background-size: cover;
-
-z-index: -1;
-
-}
-
-.hero-section {
-
-position: relative;
-
-z-index: 1;
-
 }
 
 .mario-font {
