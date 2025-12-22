@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Large-Screen Sizing
+
+This project was originally designed while the browser was zoomed to ~80%. To ensure consistent sizing on production deployments (e.g., Vercel) across large and ultra-wide displays, global font-size scaling has been added via media queries. Because the styles primarily use `rem` units, adjusting the root font-size scales typography and component dimensions uniformly.
+
+- Implementation location: [src/sass/utilities/_main.scss](src/sass/utilities/_main.scss)
+- Approach: set `html { font-size: ... }` across breakpoints (1024px, 1280px, 1440px, 1920px) and aspect ratios to reduce large-screen sizes to match the intended look.
+- Impact: project cards, hero text, and other components using `rem` will scale down on large screens; mobile/tablet remain unchanged.
+
+If further fine-tuning is needed for specific components, adjust their `rem` values or add component-level media queries. Avoid `px` for scalable dimensions.
