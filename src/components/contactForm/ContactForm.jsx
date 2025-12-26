@@ -20,12 +20,6 @@ const ContactForm = () => {
     setIsLoading(true);
     setStatusMessage("");
 
-    // Debug logging
-    console.log("Environment variables:");
-    console.log("SERVICE_ID:", SERVICE_ID);
-    console.log("TEMPLATE_ID:", TEMPLATE_ID);
-    console.log("PUBLIC_KEY:", PUBLIC_KEY);
-
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
       publicKey: PUBLIC_KEY,
     }).then(

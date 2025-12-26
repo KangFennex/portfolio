@@ -15,7 +15,7 @@ const Hero = () => {
         <div className={`hero__container__intro ${lightMode ? "light-mode" : "dark-mode"}`}>
           <HeroText />
           <GiOasis className="hero__container__intro__icon" size={80} style={{ color: 'var(--orange)' }} />
-          <p>A Fennec logo, a Super Mario font, and a desert theme? Come on in, just kick off your sandals, grab a refreshing cactus drink, and take shelter from the blazing sun.</p>
+          <p>A Fennec logo, a Super Mario font, and a desert theme for a portfolio... Come on in, just kick off your sandals, grab a refreshing cactus drink, and take shelter from the blazing sun.</p>
           <div className="hero__container__contact">
             <ContactModal buttonText="Get in touch" />
           </div>
