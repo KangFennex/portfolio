@@ -1,15 +1,12 @@
 import "../../sass/components/_index.scss";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import { LightModeContext } from "../../components/utils/LightModeContext";
-import emailjs from "emailjs-com";
-import { useRef } from "react";
+import emailjs from '@emailjs/browser';
 import { PiCactusBold } from "react-icons/pi";
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
 const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
-
-// Current error: Error: Gmail_API: Request had insufficient authentication scopes.
 
 const ContactForm = () => {
   const form = useRef();
@@ -28,9 +25,10 @@ const ContactForm = () => {
     console.log("SERVICE_ID:", SERVICE_ID);
     console.log("TEMPLATE_ID:", TEMPLATE_ID);
     console.log("PUBLIC_KEY:", PUBLIC_KEY);
-    console.log("Form data:", form.current);
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
+      publicKey: PUBLIC_KEY,
+    }).then(
       (result) => {
         console.log("Success!", result);
         setStatusMessage("Message sent successfully! I'll get back to you soon.");
